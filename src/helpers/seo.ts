@@ -104,7 +104,7 @@ export function websiteJsonLd(locale: Locale, description: string) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     name: `${SITE_NAME} Portfolio`,
     description,
     inLanguage: locale,

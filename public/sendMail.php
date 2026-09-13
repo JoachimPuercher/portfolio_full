@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact form mailer for the static Next.js site (world4you: Apache + PHP).
+ * Contact form mailer for the static Next.js site (world4you: Apache + PHP >= 7.4).
  *
  * The form (src/components/main/contact-me/ContactMeForm.tsx) posts JSON as
  * text/plain to /sendMail.php on the same origin. Validation rules mirror
@@ -35,19 +35,22 @@ if (!is_array($data)) {
 }
 
 // Honeypot: real users never fill the hidden "website" field. Pretend success.
-if (isset($data['website']) && (string) $data['website'] !== '') {
+if (($data['website'] ?? '') !== '') {
     respond(200, true);
 }
 
-$name = trim((string) ($data['name'] ?? ''));
-$email = trim((string) ($data['email'] ?? ''));
-$message = trim((string) ($data['message'] ?? ''));
+// Only strings are accepted; anything else counts as empty (and fails validation).
+$str = static fn($value): string => is_string($value) ? trim($value) : '';
+$name = $str($data['name'] ?? null);
+$email = $str($data['email'] ?? null);
+$message = $str($data['message'] ?? null);
 $privacy = ($data['privacy'] ?? false) === true;
 
+// "D": "$" matches only at the very end (not before a trailing newline).
 $rules = [
-    'name' => ['max' => 50, 'pattern' => "/^[a-zA-ZäöüÄÖÜß0-9\\-'\\s]+$/u"],
-    'email' => ['max' => 254, 'pattern' => '/^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$/'],
-    'message' => ['max' => 300, 'pattern' => "/^[a-zA-ZäöüÄÖÜß0-9\\-'\\s.,!?;:]+$/u"],
+    'name' => ['max' => 50, 'pattern' => "/^[a-zA-ZäöüÄÖÜß0-9\\-'\\s]+$/uD"],
+    'email' => ['max' => 254, 'pattern' => '/^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$/D'],
+    'message' => ['max' => 300, 'pattern' => "/^[a-zA-ZäöüÄÖÜß0-9\\-'\\s.,!?;:]+$/uD"],
 ];
 
 function isValid(string $value, array $rule): bool
@@ -63,21 +66,25 @@ if (!isValid($name, $rules['name']) || !isValid($email, $rules['email']) || !isV
 $recipient = 'contact@puercherjoachim.com';
 $esc = static fn(string $s): string => htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 
-// Subject without raw user input in the header line (RFC 2047 encoded, no CR/LF possible).
-$subject = '=?UTF-8?B?' . base64_encode('Kontaktformular: ' . $name) . '?=';
+// Subject as RFC 2047 encoded words (line-folded by mb_encode_mimeheader where available).
+$subjectText = 'Kontaktformular: ' . $name;
+$subject = function_exists('mb_encode_mimeheader')
+    ? mb_encode_mimeheader($subjectText, 'UTF-8', 'B', "\r\n")
+    : '=?UTF-8?B?' . base64_encode($subjectText) . '?=';
 
 $body = '<p><strong>Name:</strong> ' . $esc($name) . '</p>'
     . '<p><strong>E-Mail:</strong> ' . $esc($email) . '</p>'
     . '<p><strong>Nachricht:</strong><br>' . nl2br($esc($message)) . '</p>'
     . '<p><strong>Datenschutzerklärung akzeptiert:</strong> ja</p>';
 
+// PHP >= 7.2 accepts the array and validates every header line itself.
+// The email passed the pattern above, so it cannot contain CR/LF.
 $headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/html; charset=UTF-8',
-    'From: Portfolio Kontaktformular <noreply@puercherjoachim.com>',
-    'Reply-To: ' . $email,
-    'X-Mailer: PHP/' . PHP_VERSION,
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/html; charset=UTF-8',
+    'From' => 'Portfolio Kontaktformular <noreply@puercherjoachim.com>',
+    'Reply-To' => $email,
 ];
 
-$sent = @mail($recipient, $subject, $body, implode("\r\n", $headers));
+$sent = @mail($recipient, $subject, $body, $headers);
 respond($sent ? 200 : 500, $sent, $sent ? null : 'mail_failed');

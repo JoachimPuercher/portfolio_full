@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { PROJECT_SLUGS } from "@/data/projects";
-import { localizedUrl } from "@/helpers/seo";
+import { languageAlternates, localizedUrl } from "@/helpers/seo";
 
 /** Static export: rendered once at build time into out/. */
 export const dynamic = "force-static";
@@ -22,9 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency,
       priority,
-      alternates: {
-        languages: Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(l, path)])),
-      },
+      alternates: { languages: languageAlternates(path) },
     })),
   );
 }

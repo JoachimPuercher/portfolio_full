@@ -1,12 +1,13 @@
 # Static Next.js export on Apache (world4you).
 # Everything a Next.js server would do at runtime lives here. Every block is wrapped
-# in <IfModule> so a missing module never causes a 500.
+# in <IfModule> so a missing module never causes a 500, and only directives that
+# world4you permits in .htaccess are used: no "Options" (rejected there, would take
+# the whole site down with a 500) and no mod_expires (needs AllowOverride Indexes).
 #
 # Pages are exported as directories with an index.html (/de/imprint/index.html), so
-# Apache serves them with its default DirectoryIndex; a request without the trailing
-# slash (/de/imprint) is redirected to /de/imprint/ by mod_dir. No rewrite needed.
+# Apache serves them with its DirectoryIndex; a request without the trailing slash
+# (/de/imprint) is redirected to /de/imprint/ by mod_dir. No rewrite needed for pages.
 
-Options -Indexes
 AddDefaultCharset UTF-8
 
 # Unknown paths: Next exports app/not-found.tsx as /404.html (bilingual).
@@ -15,7 +16,6 @@ ErrorDocument 404 /404.html
 <IfModule mod_mime.c>
   AddType font/woff2 .woff2
   AddType image/webp .webp
-  AddType application/manifest+json .webmanifest
 </IfModule>
 
 <IfModule mod_rewrite.c>
@@ -35,32 +35,37 @@ ErrorDocument 404 /404.html
   RewriteRule ^imprint/?$ /de/imprint/ [R=301,L]
   RewriteRule ^data-save/?$ /de/data-save/ [R=301,L]
   RewriteRule ^project-details/?$ /de/projects/join/ [R=301,L]
+
+  # Directories without an index.html (/de/projects/, /images/, /_next/static/chunks/):
+  # never list them, answer with the 404 page instead ("Options -Indexes" replacement).
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^ - [R=404,L]
 </IfModule>
 
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
 
+  # HTML and the client router's .txt payloads must always be revalidated, so a new
+  # upload is visible immediately (also for client-side navigation).
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Images and the favicon: 30 days.
+  <FilesMatch "\.(png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
   # Build assets carry a content hash in their name: cache them for a year.
+  # (<If> is merged last, so it wins over the FilesMatch rules above.)
   <If "%{REQUEST_URI} =~ m#^/_next/static/#">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </If>
-
-  # HTML must always be revalidated so a new upload is visible immediately.
-  <FilesMatch "\.html$">
-    Header set Cache-Control "no-cache"
-  </FilesMatch>
-</IfModule>
-
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/html "access plus 0 seconds"
-  ExpiresByType image/png "access plus 30 days"
-  ExpiresByType image/webp "access plus 30 days"
-  ExpiresByType image/svg+xml "access plus 30 days"
-  ExpiresByType image/x-icon "access plus 30 days"
-  ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml
+  </IfModule>
 </IfModule>

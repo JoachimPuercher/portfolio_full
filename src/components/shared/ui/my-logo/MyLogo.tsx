@@ -17,6 +17,9 @@ interface MyLogoProps {
  * Angular re-navigated to "/" on the same URL (onSameUrlNavigation: 'reload') which
  * scrolled to the top; this is reproduced explicitly when already on the target page.
  */
+/** Compare paths without their trailing slash ("/de/" -> "/"), keeping a bare "/" intact. */
+const trimSlash = (p: string) => (p.length > 1 ? p.replace(new RegExp("/$"), "") : p);
+
 export default function MyLogo({ href = "/", onLogoClick }: MyLogoProps) {
   const pathname = usePathname();
 
@@ -24,7 +27,7 @@ export default function MyLogo({ href = "/", onLogoClick }: MyLogoProps) {
     <div
       onClick={() => {
         onLogoClick?.();
-        if (pathname === href) scrollToTop();
+        if (trimSlash(pathname) === trimSlash(href)) scrollToTop();
       }}
     >
       <Link

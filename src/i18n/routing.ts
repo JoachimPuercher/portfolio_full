@@ -4,7 +4,7 @@ import { defineRouting } from "next-intl/routing";
  * Locale routing for the static export. Every page lives under /de/... or /en/...
  * (a locale prefix is mandatory without middleware). The bare "/" is redirected by
  * public/.htaccess: NEXT_LOCALE cookie -> Accept-Language -> /de/. The cookie is
- * written by LangSwitch. Angular used a client toggle + localStorage("usedLang").
+ * written by LangSwitch (and again by next-intl during the client-side switch). Angular used a client toggle + localStorage("usedLang").
  */
 export const routing = defineRouting({
   locales: ["de", "en"],
