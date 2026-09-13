@@ -1,0 +1,76 @@
+/* Angular: form-sent-info.component.scss (1:1) */
+.overlay {
+  padding: 40px;
+  width: 600px;
+  height: auto;
+  background-image: url("/images/contact-me/sent_bg.webp");
+  background-size: cover;
+  color: var(--color-main-white);
+  border-radius: 20px;
+}
+
+@media (max-width: 650px) {
+  .overlay {
+    width: 95dvw;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .overlay {
+    width: 98dvw;
+    padding: 16px;
+  }
+}
+
+.overlay > span {
+  width: 100%;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: solid 1px var(--color-main-blue);
+  padding-bottom: 20px;
+}
+
+.overlay > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.errorText {
+  color: red;
+}
+
+.rollOutWrapper {
+  width: 150px;
+  display: flex;
+}
+
+.rollOutWrapper > img {
+  margin: 0 0 0 auto;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.rollOutWrapper > img.animateHand {
+  animation: wave-hand ease-in-out 1200ms forwards;
+}
+
+@keyframes wave-hand {
+  0% {
+    transform: translateX(-100px) rotate(0);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(2px) rotate(365deg);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(-2px) rotate(355deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+    opacity: 1;
+  }
+}

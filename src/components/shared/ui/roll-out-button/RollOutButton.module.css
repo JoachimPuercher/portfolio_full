@@ -1,0 +1,119 @@
+/* Angular: roll-out-button.component.scss (1:1). Shared keyframes live in globals.css. */
+.standardButton {
+  color: var(--color-main-white);
+  padding: 12px 0;
+  border-radius: 100px;
+  height: 40px;
+  text-wrap: nowrap;
+  font-family: var(--font-bricolage);
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+}
+
+.standardButton > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heroButton {
+  border: solid var(--color-main-white) 1px;
+}
+.heroButton:hover {
+  cursor: var(--cursor-default);
+}
+
+.linkButton {
+  border: none;
+}
+.linkButton:hover {
+  cursor: var(--cursor-hover) !important;
+}
+
+.heroHover {
+  animation: var(--animate-bounce-in);
+}
+.heroHoverBack {
+  animation: var(--animate-bounce-back);
+}
+.linkHover {
+  animation: var(--animate-bounce-footer-link);
+}
+.linkHoverBack {
+  animation: var(--animate-bounce-back-footer-link);
+}
+
+.heroLogo {
+  animation: var(--animate-hero-logo-back);
+}
+.heroLogoAnimate {
+  animation: var(--animate-hero-logo);
+}
+.linkLogo {
+  animation: var(--animate-link-logo-back);
+}
+.linkLogoAnimate {
+  animation: var(--animate-link-logo);
+}
+
+.heroWrapper {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+}
+
+.linkWrapper {
+  position: relative;
+  height: 32px;
+  margin: 0 0 4px 0;
+  width: 125px;
+}
+.linkWrapper > img {
+  width: 32px;
+  position: absolute;
+  object-fit: fill;
+  margin-left: 46.5px;
+}
+
+.helloButton {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+.helloButton > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.mask {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 40px;
+  background-color: var(--color-main-blue);
+  z-index: 5;
+  transition: width ease-in-out 0.4s;
+  border-radius: 100px;
+}
+.maskHover {
+  width: 100%;
+}
+
+.hideName {
+  transition: filter 0.3s ease-in-out;
+  filter: opacity(0);
+}
+.showName {
+  filter: opacity(1);
+}

@@ -1,0 +1,51 @@
+/* Angular: mask-overlay.component.scss (1:1) */
+.overlay {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-main-white);
+  background-image: url("/images/hero-section/hero-bg.webp");
+  background-size: cover;
+  background-position: bottom;
+  color: var(--color-main-red);
+  font-family: var(--font-bricolage);
+  font-size: 32px;
+  z-index: 1000;
+}
+
+@media (max-width: 950px) and (orientation: landscape) and (max-height: 550px) {
+  .overlay {
+    display: flex;
+  }
+}
+
+.rotateLogo {
+  width: 60px;
+  animation: rotate-img 2s ease infinite;
+}
+
+.myLogo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 80px;
+  height: auto;
+}
+
+@keyframes rotate-img {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(-90deg);
+  }
+  90% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
