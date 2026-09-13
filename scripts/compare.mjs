@@ -2,7 +2,7 @@
  * Visual comparison: Angular original vs. Next.js port.
  *
  *   Angular:  cd <angular project> && npx ng serve --port 4200
- *   Next:     npm run build && npx next start -p 3000
+ *   Next:     npm run build && npm run serve      (static out/ on :3000)
  *   Compare:  npm run compare            (all viewports, German)
  *             npm run compare -- --only=390x844,1920x1080 --lang=en
  *
@@ -56,10 +56,11 @@ const SCENES = [
 ];
 
 const URLS = {
-  home: { angular: "/", next: `/${LANG}` },
-  imprint: { angular: "/imprint", next: `/${LANG}/imprint` },
-  "data-save": { angular: "/data-save", next: `/${LANG}/data-save` },
-  project: { angular: "/project-details", next: (slug) => `/${LANG}/projects/${slug}` },
+  // Static export with trailingSlash: every page is a directory with an index.html.
+  home: { angular: "/", next: `/${LANG}/` },
+  imprint: { angular: "/imprint", next: `/${LANG}/imprint/` },
+  "data-save": { angular: "/data-save", next: `/${LANG}/data-save/` },
+  project: { angular: "/project-details", next: (slug) => `/${LANG}/projects/${slug}/` },
 };
 
 const FREEZE_CSS = "*{scroll-behavior:auto !important;caret-color:transparent !important}";
