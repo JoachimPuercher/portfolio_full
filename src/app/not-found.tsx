@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "@/helpers/seo";
 import "@/styles/globals.css";
 import { bricolage } from "./fonts";
+
+/** Merged into out/404.html (the not-found route has no layout metadata; Next adds noindex itself). */
+export const metadata: Metadata = {
+  title: { absolute: `404 – ${SITE_NAME}` },
+};
 
 /**
  * Exported as out/404.html and served by Apache via `ErrorDocument 404 /404.html`
