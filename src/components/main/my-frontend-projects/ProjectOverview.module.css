@@ -1,0 +1,119 @@
+/* Angular: project-overview.component.scss (1:1). The Angular `div {}` rule hit every div of the template. */
+.card,
+.imgWrapper,
+.contentWrapper {
+  background-color: var(--color-main-white);
+  color: var(--color-main-black);
+}
+
+.imgWrapper {
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 32px;
+  object-fit: contain;
+}
+@media (max-width: 1250px) {
+  .imgWrapper {
+    width: 560px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 620px) {
+  .imgWrapper {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
+}
+
+.imgWrapper > img {
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: transform ease-in-out 700ms;
+}
+@media (max-width: 620px) {
+  .imgWrapper > img {
+    width: 100%;
+  }
+}
+
+.imgWrapper > .hoverEffectAnimate {
+  object-fit: contain;
+  animation: animate-hover-effect 400ms forwards;
+}
+
+.imgWrapper::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity ease-in-out 400ms;
+  pointer-events: none;
+}
+.imgWrapper:hover::before {
+  opacity: 1;
+}
+
+.imgWrapper:hover > .hoverEffectNotAnimate {
+  animation: none;
+  transition: transform ease-in-out 400ms;
+  transform: scale(1.1) translate(0, 0);
+}
+
+.imgWrapper:hover > .contentWrapper {
+  opacity: 1;
+}
+
+.contentWrapper {
+  position: absolute;
+  right: 20px;
+  bottom: 80px;
+  height: 0;
+  z-index: 10;
+  opacity: 0;
+}
+
+.animateImg {
+  animation: animate-img-project 4s ease-in-out infinite;
+}
+
+@keyframes animate-img-project {
+  0% {
+    transform: translate(-10%, 0) scale(0.9);
+  }
+  20% {
+    transform: translate(-10%, 5%) scale(0.9);
+  }
+  45% {
+    transform: translate(-10%, 11%) scale(0.9);
+  }
+  60% {
+    transform: translate(-10%, 10%) scale(0.9);
+  }
+  80% {
+    transform: translate(-10%, 12%) scale(0.9);
+  }
+  100% {
+    transform: translate(-10%, 0) scale(0.9);
+  }
+}
+
+@keyframes animate-hover-effect {
+  0% {
+    transform: scale(0.9) translate(-10%, 0);
+  }
+  100% {
+    transform: scale(1) translate(-15%, 5%);
+  }
+}
+
+.projectHeaderText {
+  margin-bottom: 10px;
+}

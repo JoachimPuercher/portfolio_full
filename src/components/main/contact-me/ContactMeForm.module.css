@@ -1,0 +1,186 @@
+/* Angular: contact-me-form.component.scss (1:1) */
+.inputWrapper {
+  position: relative;
+  padding: 16px 24px;
+  transition: all ease-in-out 200ms;
+}
+.inputWrapper:hover {
+  cursor: var(--cursor-hover);
+}
+.inputWrapper > label {
+  cursor: var(--cursor-hover) !important;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+.inputWrapper > label:hover {
+  color: var(--color-main-red);
+}
+.inputWrapper > label > input {
+  width: 100%;
+  outline: none;
+  border: 0;
+  cursor: var(--cursor-hover);
+  background-color: #00000000;
+  font-family: var(--font-bricolage);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-main-white);
+}
+.inputWrapper > label > input::placeholder {
+  font-family: var(--font-bricolage);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-main-white);
+}
+
+/* Hover chain: hovering a field also colours the top border of the next field */
+.form > .inputWrapper:nth-child(1) {
+  border-top: 1px solid #f7c51800;
+}
+.form > .inputWrapper:nth-child(1):hover {
+  border-top: 1px solid #3355ff;
+}
+.form > .inputWrapper:nth-child(1):hover ~ .inputWrapper:nth-child(2) {
+  border-top: 1px solid #3355ff;
+}
+.form > .inputWrapper:nth-child(2) {
+  border-top: 1px solid #f7c518;
+}
+.form > .inputWrapper:nth-child(2):hover {
+  border-top: 1px solid #3355ff;
+}
+.form > .inputWrapper:nth-child(2):hover ~ .inputWrapper:nth-child(3) {
+  border-top: 1px solid #3355ff;
+}
+.form > .inputWrapper:nth-child(3) {
+  border-top: 1px solid #f7c518;
+  border-bottom: 1px solid #f7c51800;
+}
+.form > .inputWrapper:nth-child(3):hover {
+  border-top: 1px solid #3355ff;
+  border-bottom: 1px solid #3355ff;
+}
+
+.checkboxWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0 0;
+  position: relative;
+}
+.checkboxWrapper > input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: var(--cursor-hover);
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  border: solid 2px #3355ff;
+  border-radius: 2px;
+  margin: 2px;
+}
+.checkboxWrapper > input[type="checkbox"]:hover {
+  background-color: #3355ff6c;
+}
+.checkboxWrapper > input[type="checkbox"]:checked::after {
+  content: url("/images/contact-me/check.webp");
+  position: absolute;
+  top: 6px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  color: var(--color-main-yellow);
+  font-size: 20px;
+}
+
+.privacyLink {
+  text-decoration: none;
+  color: var(--color-main-blue);
+}
+.privacyLink:hover {
+  color: var(--color-main-yellow);
+}
+
+.textError {
+  font-family: var(--font-bricolage);
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  color: red;
+}
+
+.errorMessage,
+.noErrorMessage {
+  font-family: var(--font-bricolage);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 8px 0 16px;
+}
+.errorMessage {
+  color: var(--color-main-red);
+}
+.noErrorMessage {
+  color: rgba(0, 0, 0, 0);
+}
+
+.errorRed::placeholder {
+  color: red !important;
+}
+
+.sendButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sendButton {
+  font-family: var(--font-bricolage);
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 100px;
+  width: 145px;
+  height: 40px;
+  transition: all ease-in-out 0.2s;
+  color: #ffffff71;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid #ffffff71 1px;
+  box-shadow: 2px 4px 0 0 #ffffff71;
+  margin: 0 0 0 auto;
+}
+
+.activeButton {
+  border: solid var(--color-main-white) 1px;
+  box-shadow: 2px 4px 0 0 var(--color-main-white);
+  color: var(--color-main-white);
+}
+.activeButton:hover {
+  transform: translate(2px, 4px);
+  background-color: var(--color-main-red);
+  cursor: var(--cursor-hover-blue);
+  box-shadow: 0 0 0 0 var(--color-main-white);
+}
+
+.inactiveButton:hover {
+  cursor: var(--cursor-stop);
+}
+
+/* Spam trap: visually hidden, not focusable, ignored by humans */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

@@ -1,0 +1,103 @@
+/* Angular: colleagues-thoughts.component.scss (1:1) */
+.background {
+  background: linear-gradient(var(--color-main-white), white);
+}
+
+.sectionPadding {
+  padding-top: 20px;
+}
+@media (max-width: 850px) {
+  .sectionPadding {
+    padding-top: 60px;
+  }
+}
+
+.headerWrapper {
+  text-align: right;
+}
+.headerWrapper > h2 {
+  margin: 16px 0 0 0;
+  color: var(--color-main-black);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-wrap: wrap;
+}
+
+.imgWrapper {
+  position: relative;
+}
+.imgWrapper > img {
+  width: 100px;
+  transform: translateY(20px);
+  animation: var(--animate-header-line-clip-left);
+  clip-path: inset(0 0 0 100px);
+  margin-right: 16px;
+}
+.imgWrapper > span {
+  color: var(--color-main-black);
+}
+
+/*
+ * Sticker fan. The sticker wrappers carry data-aos, so they use the individual
+ * `rotate`/`translate` properties: AOS sets `transform: translateZ(0)` once animated,
+ * which Angular's higher selector specificity used to override.
+ */
+.stickerContainer {
+  position: relative;
+  padding-top: 0;
+}
+.stickerContainer > div {
+  position: relative;
+  filter: brightness(0.95);
+}
+.stickerContainer > div:nth-child(1) {
+  rotate: -4deg;
+  z-index: 3;
+}
+.stickerContainer > div:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+}
+.stickerContainer > div:nth-child(3) {
+  rotate: 4deg;
+  justify-self: flex-end;
+  z-index: 1;
+}
+.stickerContainer > div:nth-child(1):hover,
+.stickerContainer > div:nth-child(2):hover,
+.stickerContainer > div:nth-child(3):hover {
+  z-index: 4;
+  filter: brightness(1.05);
+}
+
+@media (pointer: coarse), (max-width: 520px) {
+  .stickerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media ((pointer: coarse) or (max-width: 520px)) and (max-width: 1200px) {
+  .stickerContainer {
+    gap: 0px;
+  }
+  .stickerContainer > div {
+    position: static !important;
+  }
+  .stickerContainer > div:nth-child(1) {
+    rotate: -4deg !important;
+    translate: 0 0 !important;
+  }
+  .stickerContainer > div:nth-child(2) {
+    translate: 0 0 !important;
+  }
+  .stickerContainer > div:nth-child(3) {
+    rotate: 4deg !important;
+    translate: 0 0 !important;
+  }
+}

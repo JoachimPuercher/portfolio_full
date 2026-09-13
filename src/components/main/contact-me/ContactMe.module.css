@@ -1,0 +1,100 @@
+/* Angular: contact-me.component.scss (1:1) */
+.overlayWrapper {
+  position: relative;
+}
+
+.sectionWrapper {
+  background-image: url("/images/contact-me/contact_bg.webp");
+  background-size: cover;
+  color: var(--color-main-white);
+  position: relative;
+}
+
+.section {
+  padding-bottom: 60px;
+  padding-top: 192px;
+}
+@media (max-width: 1500px) {
+  .section {
+    padding-top: 150px;
+  }
+}
+@media (max-width: 1350px) {
+  .section {
+    padding-top: 130px;
+  }
+}
+@media (max-width: 1250px) {
+  .section {
+    padding-top: 90px;
+  }
+}
+
+.overlayMask {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(9, 14, 46, 0.7);
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.left {
+  position: relative;
+}
+
+/*
+ * Carries data-aos="fade". Unlike the other AOS stickers, Angular's selector here was
+ * weaker than AOS's `.aos-animate` rule, so AOS replaced this transform with
+ * translateZ(0): the sticker slides up 50px while fading in. Keeping `transform`
+ * (lower specificity than AOS) reproduces exactly that.
+ */
+.stickerWrapper {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  margin-left: auto;
+  transform: translateY(50px);
+  z-index: 2;
+}
+
+.stickerWrapperSmall {
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  transform: translateY(50px);
+}
+@media (max-width: 1250px) {
+  .stickerWrapperSmall {
+    transform: translateY(35px);
+  }
+}
+@media (max-width: 850px) {
+  .stickerWrapperSmall {
+    width: 100px;
+    height: 100px;
+    transform: translateY(25px);
+  }
+}
+
+.sentWrapper {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 100dvh);
+  transition: transform ease-in-out 0.3s;
+  z-index: 950;
+}
+.openMenu {
+  transform: translate(-50%, 30%);
+}
+.showMenu {
+  display: flex;
+}

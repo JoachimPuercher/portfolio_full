@@ -1,0 +1,119 @@
+/* Angular: left-content.component.scss (1:1) */
+.headerWrapper {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 32px;
+}
+@media (max-width: 1250px) {
+  .headerWrapper {
+    margin-bottom: 20px;
+  }
+}
+.headerWrapper > img {
+  position: absolute;
+  width: 110%;
+  height: 18px;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  display: block;
+  object-fit: fill;
+}
+
+.mainTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.innerTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.durWrapper > span:nth-child(1) {
+  margin-right: 16px;
+}
+
+.updateEntriesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.updateEntry {
+  cursor: var(--cursor-hover-blue);
+  font-style: italic;
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  /* reset <button> defaults (Angular used a <span>) */
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+}
+.updateEntry:hover {
+  opacity: 1;
+}
+
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: rgba(218, 224, 255, 0.94);
+  backdrop-filter: blur(28px);
+  border: 1px solid rgb(51 85 255 / 0.2);
+  border-radius: 16px;
+  padding: 40px 32px 32px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 32px rgb(51 85 255 / 0.15);
+}
+
+.popupClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: var(--cursor-hover-blue);
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+}
+.popupClose:hover {
+  opacity: 1;
+}
+
+.techStackWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.techStackWrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+.techStackWrapper > div > img {
+  width: 24px;
+  height: 24px;
+}

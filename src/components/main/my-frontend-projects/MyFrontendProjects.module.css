@@ -1,0 +1,99 @@
+/* Angular: my-projects.component.scss (1:1) */
+.background {
+  background-color: var(--color-main-white);
+}
+
+@media (max-width: 1250px) {
+  .section {
+    padding-bottom: 0;
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+.headerWrapper > span {
+  color: var(--color-main-black);
+}
+.headerWrapper h2 {
+  margin: 0;
+  color: var(--color-main-black);
+}
+
+.headerText {
+  margin: 32px 0 48px;
+}
+@media (max-width: 1250px) {
+  .headerText {
+    margin: 26px 0 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  .placeholder {
+    display: none;
+  }
+}
+
+.headerInnerWrapper {
+  position: relative;
+}
+.headerInnerWrapper > img {
+  width: 280px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 26px);
+  animation: var(--animate-header-line-clip);
+  clip-path: inset(0 300px 0 0);
+}
+
+.projectWrapper {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 40px 0;
+}
+.projectWrapper:last-child {
+  margin: 0;
+}
+
+/* Featured sticker. Carries data-aos: uses the `translate` property, because AOS sets
+   `transform: translateZ(0)` on animated elements (Angular's higher specificity hid that). */
+.projectWrapper > .sticker {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+  width: 168px;
+  height: 168px;
+  z-index: 15;
+}
+@media (max-width: 850px) {
+  .projectWrapper > .sticker {
+    width: 120px;
+    height: 120px;
+    top: 35%;
+  }
+}
+@media (max-width: 500px) {
+  .projectWrapper > .sticker {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 400px) {
+  .projectWrapper > .sticker {
+    top: 25%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.touchButton {
+  width: fit-content;
+  margin: 32px 0 0 auto;
+}

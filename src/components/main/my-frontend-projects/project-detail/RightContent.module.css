@@ -1,0 +1,91 @@
+/*
+ * Angular: right-content.component.scss (1:1).
+ * Both stickers carry data-aos, so they use the individual `translate`/`rotate`
+ * properties instead of `transform` (AOS sets transform: translateZ(0) once animated).
+ */
+.imgWrapper {
+  position: relative;
+}
+
+.screenshot {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+}
+@media (max-width: 650px) {
+  .screenshot {
+    height: 100%;
+  }
+}
+
+.sticker,
+.stickerWrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 650px) {
+  .sticker,
+  .stickerWrapper {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 420px) {
+  .sticker,
+  .stickerWrapper {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.sticker {
+  translate: 40px -50%;
+}
+@media (max-width: 850px) {
+  .sticker {
+    translate: 14px 20px;
+  }
+}
+@media (max-width: 420px) {
+  .sticker {
+    translate: 8px 0;
+  }
+}
+
+.stickerWrapper {
+  left: 0;
+  right: auto;
+  translate: -30% -50%;
+  rotate: -10deg;
+}
+@media (max-width: 650px) {
+  .stickerWrapper {
+    translate: -14px 20px;
+  }
+}
+@media (max-width: 420px) {
+  .stickerWrapper {
+    translate: -8px 0;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 48px;
+  margin-top: 48px;
+}
+@media (max-width: 1250px) {
+  .buttonWrapper {
+    margin-top: 24px;
+  }
+}
+@media (max-width: 360px) {
+  .buttonWrapper {
+    gap: 24px !important;
+  }
+}
