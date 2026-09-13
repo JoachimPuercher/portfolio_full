@@ -1,0 +1,664 @@
+/*
+ * Global stylesheet.
+ *
+ * Tailwind CSS 4 WITHOUT Preflight: the Angular app ran on plain browser defaults
+ * (no CSS reset). Keeping the user-agent defaults (heading/paragraph margins, list
+ * bullets, inline images, button defaults, serif fallback font) is required for a
+ * 1:1 visual match with the original.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* ------------------------------------------------------------------ */
+/* Design tokens (Angular: _colors.scss, _fonts.scss, _animations.scss) */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-main-yellow: #f7c518; /* rgb(247, 197, 24) */
+  --color-main-blue: #3355ff;
+  --color-main-red: #f87a55; /* rgb(248, 122, 85) */
+  --color-main-white: #f8f9fa;
+  --color-main-black: #0e1013;
+
+  /* next/font/local sets --font-*-local on <html> (see src/app/fonts.ts) */
+  --font-bricolage: var(--font-bricolage-local), sans-serif;
+  --font-kalam: var(--font-kalam-local), sans-serif;
+
+  /* Shared animations (Angular mixins in _animations.scss) */
+  --animate-bounce-in: bounce-animation 1s ease forwards;
+  --animate-bounce-back: bounce-back-animation 1s ease forwards;
+  --animate-bounce-footer-link: bounce-animation-footer-link 1s ease forwards;
+  --animate-bounce-back-footer-link: bounce-back-animation-footer-link 1s ease forwards;
+  --animate-text-bouncing: text-bouncing 0.5s ease-in-out forwards;
+  --animate-text-bouncing-back: text-bouncing-back 0.5s ease-in-out forwards;
+  --animate-grey-to-color: grey-to-color 0.5s ease-in-out forwards;
+  --animate-color-to-grey: color-to-grey 0.3s ease-in-out forwards;
+  --animate-hero-logo: animate-hero-logo-main 1s ease forwards;
+  --animate-hero-logo-back: animate-hero-logo-main-back 1s ease forwards;
+  --animate-link-logo: animate-link-logo-main 1s ease forwards;
+  --animate-link-logo-back: animate-link-logo-main-back 1s ease forwards;
+
+  /*
+   * Angular defined five component-local keyframes all named "header-line"
+   * with three different bodies. Without view encapsulation they would collide,
+   * so they get unique names here.
+   */
+  --animate-header-line-clip: header-line-clip 4s ease-in 800ms infinite;
+  --animate-header-line-clip-left: header-line-clip-left 4s ease-in 800ms infinite;
+  --animate-header-line-rotate: header-line-rotate 4s ease-in 800ms infinite;
+}
+
+/* Custom image cursors (Angular used relative ../public/... urls in 13 files) */
+:root {
+  --cursor-default: url("/images/cursor_portfolio.png"), pointer;
+  --cursor-hover: url("/images/cursor_portfolio_hover.png"), pointer;
+  --cursor-hover-blue: url("/images/cursor_portfolio_hover_blue.png"), pointer;
+  --cursor-stop: url("/images/contact-me/stop.webp"), pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/* Breakpoints                                                          */
+/* Angular used literal desktop-first media queries (max-width).        */
+/* Registered from largest to smallest so smaller breakpoints win,      */
+/* exactly like the SCSS source order. Exact px semantics (<=), not <.  */
+/* ------------------------------------------------------------------ */
+@custom-variant mw-1500 (@media (max-width: 1500px));
+@custom-variant mw-1350 (@media (max-width: 1350px));
+@custom-variant mw-1250 (@media (max-width: 1250px));
+@custom-variant mw-1200 (@media (max-width: 1200px));
+@custom-variant mw-1150 (@media (max-width: 1150px));
+@custom-variant mw-950 (@media (max-width: 950px));
+@custom-variant mw-900 (@media (max-width: 900px));
+@custom-variant mw-850 (@media (max-width: 850px));
+@custom-variant mw-800 (@media (max-width: 800px));
+@custom-variant mw-768 (@media (max-width: 768px));
+@custom-variant mw-740 (@media (max-width: 740px));
+@custom-variant mw-700 (@media (max-width: 700px));
+@custom-variant mw-650 (@media (max-width: 650px));
+@custom-variant mw-620 (@media (max-width: 620px));
+@custom-variant mw-600 (@media (max-width: 600px));
+@custom-variant mw-550 (@media (max-width: 550px));
+@custom-variant mw-540 (@media (max-width: 540px));
+@custom-variant mw-520 (@media (max-width: 520px));
+@custom-variant mw-510 (@media (max-width: 510px));
+@custom-variant mw-500 (@media (max-width: 500px));
+@custom-variant mw-480 (@media (max-width: 480px));
+@custom-variant mw-430 (@media (max-width: 430px));
+@custom-variant mw-420 (@media (max-width: 420px));
+@custom-variant mw-400 (@media (max-width: 400px));
+@custom-variant mw-390 (@media (max-width: 390px));
+@custom-variant mw-380 (@media (max-width: 380px));
+@custom-variant mw-370 (@media (max-width: 370px));
+@custom-variant mw-360 (@media (max-width: 360px));
+@custom-variant mw-340 (@media (max-width: 340px));
+@custom-variant from-850 (@media (min-width: 850px));
+@custom-variant from-1251 (@media (min-width: 1251px));
+@custom-variant from-2000 (@media (min-width: 2000px));
+@custom-variant mh-900 (@media (max-height: 900px));
+@custom-variant mh-800 (@media (max-height: 800px));
+@custom-variant mh-750 (@media (max-height: 750px));
+@custom-variant mh-700 (@media (max-height: 700px));
+@custom-variant mh-650 (@media (max-height: 650px));
+@custom-variant mh-600 (@media (max-height: 600px));
+@custom-variant mh-550 (@media (max-height: 550px));
+@custom-variant mh-400 (@media (max-height: 400px));
+@custom-variant touch (@media (pointer: coarse));
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                            */
+/* ------------------------------------------------------------------ */
+@utility cursor-portfolio {
+  cursor: var(--cursor-default);
+}
+@utility cursor-portfolio-hover {
+  cursor: var(--cursor-hover);
+}
+@utility cursor-portfolio-hover-blue {
+  cursor: var(--cursor-hover-blue);
+}
+@utility cursor-stop {
+  cursor: var(--cursor-stop);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base (Angular: src/styles.scss)                                      */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+    cursor: var(--cursor-default);
+  }
+
+  @media (orientation: landscape) and (max-width: 850px) {
+    body {
+      overflow: hidden;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    cursor: var(--cursor-hover);
+  }
+
+  html.no-scroll {
+    overflow: hidden !important;
+  }
+
+  /* AOS is disabled for reduced motion; keep every [data-aos] element visible. */
+  @media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Anchor targets: land the section top at the viewport top (Angular scrollIntoView block:start). */
+  section[id],
+  [id$="-section"] {
+    scroll-margin-top: 0;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Components: global classes ported 1:1 from the Angular partials.     */
+/* Kept under the original names so both code bases can be compared.   */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* _typography.scss */
+  .section-header-small-text-typo {
+    font-family: var(--font-bricolage);
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .section-header-typo {
+    font-family: var(--font-bricolage);
+    font-size: 64px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .h3-header-typo-imprint {
+    margin: 0;
+    font-family: var(--font-bricolage);
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .h4-header-typo {
+    margin: 0;
+    font-family: var(--font-bricolage);
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .h4-text-typo {
+    margin: 0;
+    font-family: var(--font-bricolage);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .section-text-typo {
+    font-family: var(--font-bricolage);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .project-detail-button {
+    font-family: var(--font-bricolage);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .project-techlogo-font {
+    font-family: var(--font-bricolage);
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .sticker-name {
+    font-family: var(--font-bricolage);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .sticker-name-job-text {
+    font-family: var(--font-bricolage);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .sticker-profile-link-text {
+    font-family: var(--font-bricolage);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .input-label-typo {
+    font-family: var(--font-bricolage);
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .privacy-checkbox-font {
+    font-family: var(--font-bricolage);
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .footer-font-bold {
+    font-family: var(--font-bricolage);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  @media (max-width: 850px) {
+    .section-header-small-text-typo {
+      font-size: 18px;
+    }
+    .section-header-typo {
+      font-size: 48px;
+    }
+    .h3-header-typo-imprint {
+      font-size: 24px;
+    }
+    .h4-header-typo {
+      font-size: 20px;
+    }
+    .section-text-typo {
+      font-size: 18px;
+    }
+    .sticker-name {
+      font-size: 18px;
+    }
+  }
+
+  /* _layout.scss (the duplicated 1500px rule: the second one wins, as in Angular) */
+  .section-padding {
+    padding: 100px 160px;
+  }
+  @media (max-width: 1500px) {
+    .section-padding {
+      padding: 40px 50px;
+    }
+  }
+  @media (max-width: 600px) {
+    .section-padding {
+      padding: 40px 16px;
+    }
+  }
+  @media (max-width: 420px) {
+    .section-padding {
+      padding: 40px 8px;
+    }
+  }
+
+  .inner-section-two-col {
+    display: grid;
+    grid-template-columns: 560px 560px;
+    justify-content: space-between;
+  }
+  @media (max-width: 1250px) {
+    .inner-section-two-col {
+      grid-template-columns: 90vw;
+      justify-content: center;
+      gap: 80px;
+    }
+  }
+  @media (max-width: 850px) {
+    .inner-section-two-col {
+      gap: 40px;
+    }
+  }
+  @media (max-width: 600px) {
+    .inner-section-two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .max-content-width {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  /* _visibility.scss */
+  .display-none {
+    display: none !important;
+  }
+  @media (pointer: coarse) {
+    .display-none-touch-device {
+      display: none;
+    }
+  }
+  .display-block-touch-device {
+    display: none;
+  }
+  @media (pointer: coarse) {
+    .display-block-touch-device {
+      display: block;
+    }
+  }
+  .display-flex-touch-device {
+    display: flex;
+  }
+  @media (max-width: 768px) {
+    .display-hide-768px-width {
+      display: none;
+    }
+    .display-block-768px-width {
+      display: block;
+    }
+  }
+  @media (max-width: 1250px) {
+    .display-hide-1250px-width {
+      display: none !important;
+    }
+  }
+  @media (min-width: 1251px) {
+    .display-hide-over-1250px-width {
+      display: none !important;
+    }
+  }
+  .display-flex-mobile768-width {
+    display: none !important;
+  }
+  @media (max-width: 768px) {
+    .display-flex-mobile768-width {
+      display: flex !important;
+    }
+  }
+  @media (max-width: 550px) {
+    .display-hide-550-width {
+      display: none !important;
+    }
+  }
+  .display-flex-mobile550-width {
+    display: none !important;
+  }
+  @media (max-width: 550px) {
+    .display-flex-mobile550-width {
+      display: flex !important;
+    }
+  }
+
+  /* _visuals.scss */
+  .contact-arrow {
+    display: block;
+    margin: 0 0 0 auto;
+    width: 280px;
+    animation: var(--animate-header-line-clip);
+    clip-path: inset(0 300px 0 0);
+  }
+  @media (max-width: 1250px) {
+    .contact-arrow {
+      margin: 0;
+    }
+  }
+  @media (max-width: 480px) {
+    .contact-arrow {
+      width: 45vw;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Keyframes (Angular: _animations.scss + the renamed header-line ones) */
+/* ------------------------------------------------------------------ */
+@keyframes bounce-animation {
+  0% {
+    width: 145px;
+  }
+  50% {
+    width: 285px;
+  }
+  85% {
+    width: 270px;
+  }
+  100% {
+    width: 275px;
+  }
+}
+
+@keyframes bounce-back-animation {
+  0% {
+    width: 275px;
+  }
+  50% {
+    width: 135px;
+  }
+  85% {
+    width: 150px;
+  }
+  100% {
+    width: 145px;
+  }
+}
+
+@keyframes bounce-animation-footer-link {
+  0%,
+  100% {
+    width: 125px;
+  }
+}
+
+@keyframes bounce-back-animation-footer-link {
+  0%,
+  100% {
+    width: 125px;
+  }
+}
+
+@keyframes text-bouncing {
+  0% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  85% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes text-bouncing-back {
+  0% {
+    transform: translateX(1px);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+  85% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-hero-logo-main {
+  0% {
+    filter: opacity(0);
+    transform: rotate(0deg);
+  }
+  55% {
+    filter: opacity(1);
+    transform: rotate(365deg);
+  }
+  85% {
+    filter: opacity(1);
+    transform: rotate(355deg);
+  }
+  100% {
+    filter: opacity(1);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-hero-logo-main-back {
+  0% {
+    filter: opacity(1);
+    transform: rotate(360deg);
+  }
+  55% {
+    filter: opacity(0);
+    transform: rotate(-5deg);
+  }
+  85% {
+    filter: opacity(0);
+    transform: rotate(5deg);
+  }
+  100% {
+    filter: opacity(0);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animate-link-logo-main {
+  0% {
+    filter: opacity(0);
+    transform: rotate(0deg);
+    margin-left: 46.5px;
+  }
+  55% {
+    filter: opacity(1);
+    transform: rotate(365deg);
+    margin-left: 94px;
+  }
+  75% {
+    filter: opacity(1);
+    transform: rotate(355deg);
+    margin-left: 90px;
+  }
+  100% {
+    filter: opacity(1);
+    transform: rotate(360deg);
+    margin-left: 92px;
+  }
+}
+
+@keyframes animate-link-logo-main-back {
+  0% {
+    filter: opacity(1);
+    transform: rotate(360deg);
+    margin-left: 92px;
+  }
+  55% {
+    filter: opacity(0);
+    transform: rotate(0);
+    margin-left: 46.5px;
+  }
+  75% {
+    filter: opacity(0);
+    transform: rotate(0);
+    margin-left: 46.5px;
+  }
+  100% {
+    filter: opacity(0);
+    transform: rotate(0);
+    margin-left: 46.5px;
+  }
+}
+
+@keyframes grey-to-color {
+  0% {
+    filter: grayscale(1) brightness(1);
+  }
+  30% {
+    filter: grayscale(0.4) brightness(1.1);
+  }
+  60% {
+    filter: grayscale(0) brightness(0.95);
+  }
+  85% {
+    filter: grayscale(0.1) brightness(1.05);
+  }
+  100% {
+    filter: grayscale(0) brightness(1);
+  }
+}
+
+@keyframes color-to-grey {
+  0% {
+    filter: grayscale(0) brightness(1);
+  }
+  30% {
+    filter: grayscale(0.2) brightness(1.05);
+  }
+  60% {
+    filter: grayscale(0.6) brightness(0.95);
+  }
+  85% {
+    filter: grayscale(0.8) brightness(1.02);
+  }
+  100% {
+    filter: grayscale(1) brightness(1);
+  }
+}
+
+/* about-me, my-projects, contact-me: underline drawn in from the left (clip from right) */
+@keyframes header-line-clip {
+  0% {
+    clip-path: inset(0 300px 0 0);
+  }
+  5% {
+    clip-path: inset(0 0 0 0);
+  }
+  80% {
+    clip-path: inset(0 0 0 0);
+  }
+  90% {
+    clip-path: inset(0 300px 0 0);
+  }
+  100% {
+    clip-path: inset(0 300px 0 0);
+  }
+}
+
+/* colleagues-thoughts: arrow drawn in from the right (clip from left) */
+@keyframes header-line-clip-left {
+  0% {
+    clip-path: inset(0 0 0 100px);
+  }
+  3% {
+    clip-path: inset(0 0 0 0);
+  }
+  84% {
+    clip-path: inset(0 0 0 0);
+  }
+  90% {
+    clip-path: inset(0 0 0 100px);
+  }
+  100% {
+    clip-path: inset(0 0 0 100px);
+  }
+}
+
+/* skill-set: pen stroke swept in by rotation */
+@keyframes header-line-rotate {
+  0% {
+    transform: rotate(-110deg);
+  }
+  3% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  84% {
+    transform: rotate(-110deg);
+  }
+  100% {
+    transform: rotate(-110deg);
+  }
+}
