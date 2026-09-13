@@ -3,21 +3,18 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
+/**
+ * Static export for world4you (Apache + PHP, no Node): `next build` writes the whole
+ * site as HTML/CSS/JS into `out/`. Everything a Next server would do at runtime
+ * (locale redirect on "/", legacy URL redirects, 404) is handled by public/.htaccess.
+ */
 const nextConfig: NextConfig = {
+  output: "export",
+  // /de/imprint/ -> out/de/imprint/index.html: Apache serves it without rewrite rules.
+  trailingSlash: true,
+  // No image optimizer without a server; the site uses plain <img>.
+  images: { unoptimized: true },
   poweredByHeader: false,
-
-  /**
-   * Permanent (308) redirects for the URLs of the former Angular site, so existing
-   * links and search rankings carry over. The old site defaulted to German.
-   * "/project-details" had no project parameter and always showed the first project.
-   */
-  async redirects() {
-    return [
-      { source: "/imprint", destination: "/de/imprint", permanent: true },
-      { source: "/data-save", destination: "/de/data-save", permanent: true },
-      { source: "/project-details", destination: "/de/projects/join", permanent: true },
-    ];
-  },
 };
 
 export default withNextIntl(nextConfig);

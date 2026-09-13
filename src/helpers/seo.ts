@@ -10,9 +10,17 @@ export const SITE_NAME = "Joachim Pürcher";
 
 const OG_LOCALE: Record<Locale, string> = { de: "de_AT", en: "en_US" };
 
-/** Absolute URL for a locale and a locale-less path ("" | "/imprint" | "/projects/join"). */
+/**
+ * Absolute URL for a locale and a locale-less path ("" | "/imprint" | "/projects/join").
+ * Always ends with "/" (trailingSlash export: /de/imprint/ -> out/de/imprint/index.html).
+ */
 export function localizedUrl(locale: Locale, path = ""): string {
-  return `${SITE_URL}/${locale}${path}`;
+  return `${SITE_URL}/${locale}${path}/`;
+}
+
+/** Static Open Graph image per locale (public/og/<locale>.png, built by scripts/generate-og.mjs). */
+export function ogImageUrl(locale: Locale): string {
+  return `${SITE_URL}/og/${locale}.png`;
 }
 
 /** hreflang map for all locales plus x-default (default locale). */
@@ -34,9 +42,13 @@ interface PageMetaInput {
   noIndex?: boolean;
 }
 
-/** Per-page metadata: canonical, hreflang alternates, Open Graph and Twitter. */
+/**
+ * Per-page metadata: canonical, hreflang alternates, Open Graph and Twitter.
+ * `openGraph`/`twitter` are not deep-merged with the layout, so the image is set here too.
+ */
 export function buildPageMetadata({ locale, path, title, description, absoluteTitle, noIndex }: PageMetaInput): Metadata {
   const url = localizedUrl(locale, path);
+  const image = { url: ogImageUrl(locale), width: 1200, height: 630, alt: `${SITE_NAME} – Frontend Developer` };
   return {
     ...(title ? { title: absoluteTitle ? { absolute: title } : title } : {}),
     description,
@@ -49,8 +61,9 @@ export function buildPageMetadata({ locale, path, title, description, absoluteTi
       alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
       ...(title ? { title } : {}),
       description,
+      images: [image],
     },
-    twitter: { card: "summary_large_image", ...(title ? { title } : {}), description },
+    twitter: { card: "summary_large_image", ...(title ? { title } : {}), description, images: [image.url] },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),
   };
 }

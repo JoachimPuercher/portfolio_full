@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "compare": "node scripts/compare.mjs"
+    "compare": "node scripts/compare.mjs",
+    "postbuild": "node scripts/postbuild.mjs",
+    "serve": "serve out -l 3000",
+    "og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "aos": "^2.3.4",
@@ -31,6 +34,7 @@
     "pngjs": "^7.0.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "serve": "^14.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

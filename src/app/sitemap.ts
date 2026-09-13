@@ -3,6 +3,9 @@ import { routing } from "@/i18n/routing";
 import { PROJECT_SLUGS } from "@/data/projects";
 import { localizedUrl } from "@/helpers/seo";
 
+/** Static export: rendered once at build time into out/. */
+export const dynamic = "force-static";
+
 /** Every page in every locale, each with its hreflang alternates. */
 const PAGES: { path: string; priority: number; changeFrequency: "monthly" | "yearly" }[] = [
   { path: "", priority: 1, changeFrequency: "monthly" },
