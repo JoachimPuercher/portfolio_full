@@ -27,9 +27,9 @@ interface ContactMeFormProps {
  * Behaviour kept: trim on submit, empty fields switch their placeholder to the red error
  * text, pattern hints below name/email once touched, privacy hint, and the send button
  * looks active only when everything is valid (it is never disabled).
- * Changes: posts to /api/contact (server validation + honeypot), whitespace-only input is
- * rejected, double submits are blocked. The message stays a single-line input as in the
- * design (a growing textarea changed the layout).
+ * Changes: posts to /sendMail.php on the same host (server-side validation + honeypot
+ * live in the PHP), whitespace-only input is rejected, double submits are blocked. The
+ * message stays a single-line input as in the design.
  */
 export default function ContactMeForm({ onSuccess, onError }: ContactMeFormProps) {
   const t = useTranslations("contactMe");
@@ -85,9 +85,10 @@ export default function ContactMeForm({ onSuccess, onError }: ContactMeFormProps
 
     setSending(true);
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/sendMail.php", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        // text/plain: the PHP reads php://input and json_decodes it; no CORS preflight.
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ ...trimmed, website }),
       });
       if (!res.ok) throw new Error(`Contact request failed (${res.status})`);

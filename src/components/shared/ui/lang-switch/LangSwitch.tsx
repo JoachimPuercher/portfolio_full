@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/helpers/cn";
+import { setLocaleCookie } from "@/helpers/locale-cookie";
 import { SKIP_INTRO_KEY } from "@/components/main/hero-section/useHeroIntroAnimation";
 
 interface LangSwitchProps {
@@ -20,7 +21,8 @@ interface LangSwitchProps {
  * Angular: shared/components/ui/lang-switch.
  * Angular switched the language in place (ngx-translate + localStorage).
  * Now the locale is part of the URL: the current page is replaced by the same path
- * in the other locale, without scrolling (next-intl sets the NEXT_LOCALE cookie).
+ * in the other locale, without scrolling. The choice is stored in the NEXT_LOCALE
+ * cookie (static export has no middleware), which .htaccess reads for "/".
  */
 export default function LangSwitch({ textColor }: LangSwitchProps) {
   const locale = useLocale() as Locale;
@@ -37,6 +39,7 @@ export default function LangSwitch({ textColor }: LangSwitchProps) {
         /* ignore */
       }
     }
+    setLocaleCookie(next);
     router.replace(`${pathname}${window.location.hash}`, { locale: next, scroll: false });
   };
 
