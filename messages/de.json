@@ -1,0 +1,253 @@
+{
+  "header": {
+    "aboutme": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "hello": "Hallo Welt",
+    "helloHover": "ICH HEIßE JOACHIM PÜRCHER",
+    "mainSingle": {
+      "frontendFirst": "F",
+      "frontendLast": [
+        "r",
+        "o",
+        "n",
+        "t",
+        "e",
+        "n",
+        "d"
+      ],
+      "developer": [
+        "E",
+        "N",
+        "T",
+        "W",
+        "I",
+        "C",
+        "K",
+        "L",
+        "E",
+        "R"
+      ]
+    },
+    "touch": "Kontaktiere mich"
+  },
+  "aboutMe": {
+    "basedIn": "Wohnsitz in Wilhering/Linz",
+    "relocate": "Offen für einen Umzug",
+    "remote": "Offen für Homeoffice",
+    "who": "WER IST JOACHIM",
+    "header": "Über mich",
+    "text": "Ich bin Frontend-Webentwickler und habe eine echte Leidenschaft für das Erstellen von Webanwendungen. Für mich geht es nicht nur darum, Code zu schreiben oder die neuesten Technologien zu nutzen – es geht darum, Lösungen zu finden, die gut durchdacht und benutzerfreundlich sind. Es ist mir wichtig, Anwendung zu erstellen, die dem Benutzer einen echte Mehrwert bieten und auch nach Jahren noch wartbar sind. Dabei halte ich mich an die aktuellen 'best practices' und sauberen Code.",
+    "collaborate": "Ich freue mich darauf, gemeinsam etwas Großartiges zu schaffen!",
+    "button": "Kontakt aufnehmen"
+  },
+  "skills": {
+    "myStack": "MEIN TECH-STACK",
+    "header": "Skill Set",
+    "introduction": "Durch zahlreiche abgeschlossene Projekte konnte ich mir die folgenden Fähigkeiten aneignen. Diese entwickle ich kontinuierlich weiter, um mit den neuesten Anforderungen Schritt zu halten."
+  },
+  "projects": {
+    "craft": "MEINE",
+    "header": "Projekte",
+    "text": "Hier finden Sie einen Auszug meiner vergangenen Arbeiten.",
+    "buttonText": "Projekt Details",
+    "projectDetails": {
+      "backButton": "Zurück",
+      "nextButton": "Nächstes Projekt",
+      "join": {
+        "header": "Join",
+        "descHeader": "Beschreibung",
+        "descText": "Eine professionelle Task-Management-App, inspiriert vom bekannten Kanban-Konzept. Zum Erstellen und Organisieren von Arbeitsabläufen, Zuteilen von Mitgliedern und Verwalten per drag and drop.",
+        "implementHeader": "Implementierung",
+        "implementText": "Erstellen der einzelnen Kanban-Tasks für das Team. Zuweisung an die einzelnen Personen. Erstellung des Designs aller Sektionen per Designvorlage (Figma). Erstellung der Datenbankstruktur in Firebase. Implementierung der Datenaufbereitung von der API. Einbindung der Daten in die einzelnen Sektionen. Testing. Einheitliches, responsives Design laut Designvorlage (Figma).",
+        "durHeader": "Dauer",
+        "durTime": "6 Wochen"
+      },
+      "elpolloloco": {
+        "header": "El Pollo Loco",
+        "descHeader": "Beschreibung",
+        "descText": "Ein objektorientiertes Browser Jump-and-Run Spiel. Hilf Pepe, Münzen und Tabasco-Flaschen zu sammeln, um am Ende das verrückte Oberhuhn zu bekämpfen. Zwei Schwierigkeitsgrade und ein endloser Hühnerrush Level erwarten dich. Inklusive einem Top 30 Highscore Board.",
+        "implementHeader": "Implementierung",
+        "implementText": "Erstellung des Grundgerüsts. Schrittweise Implementierung der einzelnen Grafiken. Erstellen des Objekts oder eines vererbten Objekts (Grundgerüst) → Grafik einfügen → Animationen erstellen → Logik einbauen → Soundeffekte einfügen → Testen. Implementierung des Punkteboards (dynamisch), um jederzeit die Punktevergabe ändern zu können (REST-API). Implementierung eines Soundobjekts mit Lautstärkeregelung. Erstellung der beiden anderen Spielmodi.",
+        "durHeader": "Dauer",
+        "durTime": "6 Wochen"
+      },
+      "simplify": {
+        "header": "Simplify this life",
+        "descHeader": "Beschreibung",
+        "descText": "Meine eigene Vision einer Organisierungs Anwendung. Geschrieben als responsive Web Anwendung, ausgelegt für Smartphones. Keine überladenen Menüs, Einstellungen und Möglichkeiten. Nur das Wichtigste im Kern, in einem einfach zu bedienenden UI. Großteils alles im Daumenbereich.",
+        "implementHeader": "Implementierungsdetails",
+        "implementText": "Erstellen einer skalierbaren und erweiterbaren Architektur. Der Main Screen als Basis mit den erweiterbaren Featuremodulen. Firebase wird später durch ein eigenes Back End ersetzt.",
+        "implementUpdateToDo": "UPDATE 18.01.2025 - Erledigungen implementiert",
+        "implementUpdateToDoInfo": "Erledigungen erstellen. Langfristige, Kurzfristige, für die Arbeit. Mit Prioritäten versehen. Editieren und in den Papierkorb verschieben.",
+        "implementUpdateFinance": "UPDATE 07.03.2025 - Finanzübersicht implementiert",
+        "implementUpdateFinanceText": "Monatliche Ein- und Ausgaben eingeben und editieren. Tägliche Ausgaben mit Name und Kategorie eintragen. Übersicht des am aktuellen Tag zur Verfügung stehenden Betrages. Kalkuliert anhand der eingegebenen Daten und des aktuellen Monats. Bei Monatswechsel, aufrufen der vergangenen Daten möglich.",
+        "durHeader": "Dauer",
+        "durTime": "In ständiger Weiterentwicklung"
+      },
+      "schoolInfos": {
+        "header": "Schoolinfos",
+        "descHeader": "Beschreibung",
+        "descText": "Eine Informationsseite für die Eltern unserer Schulkinder. Alle Informationen, Termine, Ferien und Tage der offenen Tür der Mittelschulen auf einer Seite. Sie wurde entwickelt, um ein kleines Problem zu lösen, das einige Eltern beschäftigte.",
+        "implementHeader": "Implementierungsdetails",
+        "implementText": "Abschnitt für Abschnitt mit grundlegenden React-Komponenten erstellt, ohne weitere Bibliotheken oder Imports. Einfach und sauber.",
+        "durHeader": "Dauer",
+        "durTime": "Eine Woche"
+      }
+    }
+  },
+  "thoughts": {
+    "words": "GEDANKEN",
+    "header": "Meinungen von Kolleg:innen",
+    "colleagues": {
+      "first": {
+        "name": "Bernadette Pöltl",
+        "comment": "Joachim ist nicht nur fachlich stark, sondern auch menschlich eine echte Bereicherung. Der Austausch mit ihm ist immer offen, ehrlich und inspirierend – als hilfsbereiter Kollege und reflektierter Frontend Developer ist er für mich eine große Unterstützung im Ausbildungsalltag.",
+        "link": ".",
+        "role": "Frontend Entwickler"
+      },
+      "second": {
+        "name": "Dominic Duchaczek",
+        "comment": "Joachim hatte stets ein offenes Ohr für meine Anliegen, Wünsche und Fragen. Selbst in stressigen Situationen behielt er den Überblick und verlor dabei nie das große Ganze aus den Augen. Seine ruhige und lösungsorientierte Art machte ihn zu einem verlässlichen Kollegen, auf den man sich jederzeit verlassen konnte.",
+        "link": "https://www.linkedin.com/in/dominic-duchaczek-397b641b6/",
+        "role": "Projektmanager"
+      },
+      "third": {
+        "name": "Eduard Fray",
+        "comment": "Die Zusammenarbeit mit Joachim war durchweg positiv. Er verstand es, das Team zu motivieren und gleichzeitig den Fokus auf unsere Ziele nicht aus den Augen zu verlieren. Durch seine offene und hilfsbereite Art war er ein echter Gewinn für das Team.",
+        "link": "https://www.linkedin.com/in/eduard-fray-696ba81a9/",
+        "role": "Frontend Entwickler"
+      }
+    },
+    "profile": "Profil"
+  },
+  "contactMe": {
+    "headerWords": "KONTAKTIERE MICH",
+    "header": "Bereit, gemeinsam loszulegen?",
+    "mainTextFirst": "Ich freue mich darauf, dich kennenzulernen und gemeinsam mit dir eine perfekte Lösung für dein Problem zu finden. Über dieses Formular kannst du mir eine Nachricht zukommen lassen. Bitte trage deinen Namen, deine E-Mail-Adresse und kurz dein Anliegen ein. Abschicken – und fertig!",
+    "mainTextSecond": "Moderne Zeiten brauchen moderne Lösungen und zeitloses Design. Lass uns loslegen!",
+    "form": {
+      "name": {
+        "header": "Wie heißt du?",
+        "placeholder": "Deinen Namen eingeben",
+        "error": "Oops! Bitte deinen Namen eingeben",
+        "errorMessage": "Keine Sonderzeichen, nur ein Leerzeichen"
+      },
+      "email": {
+        "header": "Wie lautet deine E-Mail-Adresse?",
+        "placeholder": "deineemail@email.com",
+        "error": "Hoppla! deine E-Mail-Adresse fehlt",
+        "errorMessage": "Keine gültige E-Mail-Adresse"
+      },
+      "message": {
+        "header": "Wie kann ich dir helfen?",
+        "placeholder": "Hallo Joachim, ich interessiere mich für...",
+        "error": "Was wollen wir entwickeln?"
+      },
+      "privacy": {
+        "firstPart": "Ich habe die",
+        "privacyPart": " Datenschutzerklärung ",
+        "lastPart": "gelesen und akzeptiere die Verarbeitung meiner Daten wie beschrieben.",
+        "placeholder": "Bitte die Datenschutzerklärung akzeptieren",
+        "error": "Bitte die Datenschutzerklärung akzeptieren"
+      }
+    },
+    "sendButton": "Senden",
+    "sentMessage": {
+      "headerText": {
+        "resolve": "Nachricht wurde erfolgreich gesendet.",
+        "error": "Ups, da ist etwas schiefgelaufen."
+      },
+      "mainText": {
+        "resolve": "Vielen Dank! Ich melde mich unverzüglich.",
+        "error": "Leider konnte deine Nachricht nicht gesendet werden. Bitte kontaktiere mich direkt per E-Mail."
+      },
+      "buttonText": "Schließen"
+    }
+  },
+  "footer": {
+    "legal": "Impressum",
+    "imprint": "Impressum"
+  },
+  "dataSave": {
+    "header": "Erklärung zur Informationspflicht",
+    "privacy": {
+      "header": "Datenschutzerklärung",
+      "textOne": "   In folgender Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Webseite. Wir erheben und verarbeiten personenbezogene Daten nur auf Grundlage der gesetzlichen Bestimmungen (Datenschutzgrundverordnung, Telekommunikationsgesetz 2003).",
+      "textTwo": "Sobald Sie als Benutzer auf unsere Webseite zugreifen oder diese besuchen wird Ihre IP-Adresse, Beginn sowie Beginn und Ende der Sitzung erfasst. Dies ist technisch bedingt und stellt somit ein berechtigtes Interesse iSv Art 6 Abs 1 lit f DSGVO."
+    },
+    "contactUs": {
+      "header": "Kontakt mit uns",
+      "textOne": "  Wenn Sie uns, entweder über unser Kontaktformular auf unserer Webseite, oder per E-Mail kontaktieren, dann werden die von Ihnen an uns übermittelten Daten zwecks Bearbeitung Ihrer Anfrage oder für den Fall von weiteren Anschlussfragen für sechs Monate bei uns gespeichert. Es erfolgt, ohne Ihre Einwilligung, keine Weitergabe Ihrer übermittelten Daten."
+    },
+    "cookies": {
+      "header": "Cookies",
+      "textOne": " Unsere Website verwendet so genannte Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf Ihrem Endgerät abgelegt werden. Sie richten keinen Schaden an. Wir nutzen Cookies dazu, unser Angebot nutzerfreundlich zu gestalten. Einige Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Sie ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen. Wenn Sie dies nicht wünschen, so können Sie Ihren Browser so einrichten, dass er Sie über das Setzen von Cookies informiert und Sie dies nur im Einzelfall erlauben. Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein."
+    },
+    "serverLog": {
+      "header": "Server Log Files",
+      "textOne": "Diese Webseite und der damit verbundene Provider erhebt im Zuge der Webseitennutzung automatisch Informationen im Rahmen sogenannter „Server-Log Files“. Dies betrifft insbesondere:",
+      "list": [
+        "IP-Adresse oder Hostname",
+        "den verwendeten Browser",
+        "Aufenthaltsdauer auf der Webseite sowie Datum und Uhrzeit",
+        "aufgerufene Seiten der Webseite",
+        "Spracheinstellungen und Betriebssystem",
+        "'Leaving page' (auf welcher URL hat der Benutzer die Webseite verlassen)",
+        "ISP (Internet Service Provider)"
+      ],
+      "textTwo": "Diese erhobenen Informationen werden nicht personenbezogen verarbeitet oder mit personenbezogenen Daten in Verbindung gebracht.",
+      "textThree": "   Der Webseitenbetreiber behält es sich vor, im Falle von Bekanntwerden rechtswidriger Tätigkeiten, diese Daten auszuwerten oder zu überprüfen."
+    },
+    "rights": {
+      "header": "Ihre Rechte als Betroffener",
+      "textOne": "Sie als Betroffener haben bezüglich Ihrer Daten, welche bei uns gespeichert sind grundsätzlich ein Recht auf:",
+      "list": [
+        "Auskunft",
+        "Löschung der Daten",
+        "Berichtigung der Daten",
+        "Übertragbarkeit der Daten",
+        "Widerruf und Widerspruch zur Datenverarbeitung",
+        "Einschränkung"
+      ],
+      "textTwo": "Wenn Sie vermuten, dass im Zuge der Verarbeitung Ihrer Daten Verstöße gegen das Datenschutzrecht passiert sind, so haben Sie die Möglichkeit sich bei uns (contact@PuercherJoachim.com) oder der Datenschutzbehörde zu beschweren."
+    },
+    "reach": {
+      "header": "Sie erreichen uns unter folgenden Kontaktdaten:",
+      "operator": "Webseitenbetreiber:",
+      "phoneText": "Telefonnummer:",
+      "source": "Quelle"
+    }
+  },
+  "imprint": {
+    "header": "Impressum",
+    "info": "Angaben zum Diensteanbieter",
+    "phoneText": "Tel.: ",
+    "liabilityHeader": "Haftung für den Inhalte dieser Seite",
+    "liabilityText": "Wir sind stets bemüht, die Inhalte dieser Website aktuell und korrekt zu halten. Dennoch können wir keine Gewähr für die Vollständigkeit, Richtigkeit und Aktualität sämtlicher Inhalte übernehmen, insbesondere nicht für solche, die von Dritten stammen. Als Anbieter von Diensten sind wir nicht verpflichtet, übermittelte oder gespeicherte Informationen zu überwachen oder nach Hinweisen auf rechtswidrige Aktivitäten zu suchen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen gemäß den allgemeinen Gesetzen bleiben hiervon unberührt – auch wenn wir nicht für den Inhalt verantwortlich sind. Wenn Ihnen problematische oder rechtswidrige Inhalte auffallen, bitten wir Sie, uns rasch zu informieren. Die entsprechenden Kontaktdaten finden Sie im Impressum.",
+    "linksHeader": "Externe Links auf dieser Seite",
+    "linksText": "Unsere Website enthält Verweise auf externe Internetseiten. Für deren Inhalte übernehmen wir keine Verantwortung. Eine Haftung kommt nicht in Betracht, da uns keine Hinweise auf rechtswidrige Inhalte vorlagen und auch keine solchen bekannt geworden sind. Sollte sich dies ändern, entfernen wir die entsprechenden Verlinkungen umgehend. Wenn Sie auf rechtswidrige Links stoßen, benachrichtigen Sie uns bitte. Die Kontaktdaten finden Sie im Impressum.",
+    "copyrightHeader": "Hinweis zum Urheberrecht",
+    "copyrightText": "Sämtliche Inhalte dieser Website (Texte, Bilder, Videos etc.) unterliegen dem Urheberrecht. Bitte kontaktieren Sie uns, bevor Sie Inhalte weiterverbreiten, kopieren oder anderweitig nutzen – beispielsweise durch Veröffentlichung auf anderen Seiten. Bei unberechtigter Nutzung behalten wir uns rechtliche Schritte vor. Falls Sie Inhalte entdecken, die Urheberrechte verletzen, bitten wir um eine kurze Mitteilung.",
+    "onlineLinksHeader": "Zusätzliche Onlinepräsenzen",
+    "onlineLinksSubText": "Dieses Impressum gilt ebenfalls für",
+    "onlineLinksText": "Alle Inhalte sind urheberrechtlich geschützt"
+  },
+  "meta": {
+    "title": "Joachim Pürcher – Frontend Entwickler aus Linz | Portfolio",
+    "description": "Portfolio von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz (Österreich). React, Next.js, TypeScript und Angular: Projekte, Skills und Kontakt.",
+    "jobTitle": "Frontend Entwickler",
+    "heroHeading": "Joachim Pürcher – Frontend Entwickler",
+    "imprintTitle": "Impressum",
+    "imprintDescription": "Impressum und Angaben zum Diensteanbieter der Website von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz.",
+    "dataSaveTitle": "Datenschutzerklärung",
+    "dataSaveDescription": "Datenschutzerklärung der Website von Joachim Pürcher: Kontaktformular, Cookies, Server-Logfiles und Ihre Rechte.",
+    "projectTitle": "{name} – Projekt",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Diese Seite existiert nicht.",
+    "notFoundLink": "Zur Startseite"
+  }
+}

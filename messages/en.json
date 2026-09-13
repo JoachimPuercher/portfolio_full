@@ -1,0 +1,252 @@
+{
+  "header": {
+    "aboutme": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "hello": "Hello World",
+    "helloHover": "I'M JOACHIM PÜRCHER",
+    "mainSingle": {
+      "frontendFirst": "F",
+      "frontendLast": [
+        "r",
+        "o",
+        "n",
+        "t",
+        "e",
+        "n",
+        "d"
+      ],
+      "developer": [
+        "D",
+        "E",
+        "V",
+        "E",
+        "L",
+        "O",
+        "P",
+        "E",
+        "R"
+      ]
+    },
+    "touch": "Get in Touch"
+  },
+  "aboutMe": {
+    "basedIn": "Based in Wilhering/Linz",
+    "relocate": "Open to relocate",
+    "remote": "Open to work remote",
+    "who": "WHO'S JOACHIM",
+    "header": "About me",
+    "text": "I am a frontend web developer with a true passion for creating web applications. For me, it’s not just about writing code or using the latest technologies – it’s about finding solutions that are well thought out and user-friendly. It’s important to me to build applications that provide real value to users and remain maintainable even years down the line. I follow current best practices and write clean, structured code.",
+    "collaborate": "I look forward to creating something great together!",
+    "button": "Let's talk"
+  },
+  "skills": {
+    "myStack": "MY STACK",
+    "header": "Skill Set",
+    "introduction": "In the past, I created many projects while learning the following skill set. These skills are constantly being expanded to keep up with the times."
+  },
+  "projects": {
+    "craft": "MY CRAFT",
+    "header": "Projects",
+    "text": "The following projects are an excerpt from my past work.",
+    "buttonText": "Project details",
+    "projectDetails": {
+      "backButton": "Go Back",
+      "nextButton": "Next Project",
+      "join": {
+        "header": "Join",
+        "descHeader": "Description",
+        "descText": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "implementHeader": "Implementation Details",
+        "implementText": "Creating the individual Kanban tasks for the team. Assigning them to the respective team members. Designing all sections based on the design template (Figma). Creating the database structure in Firebase. Implementing data processing from the API. Integrating the data into the individual sections. Testing. Consistent, responsive design according to the design template (Figma).",
+        "durHeader": "Duration",
+        "durTime": "Six Weeks"
+      },
+      "elpolloloco": {
+        "header": "El Pollo Loco",
+        "descHeader": "Description",
+        "descText": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen. Two difficult levels, an endless Chicken Rush mode and a top 30 Highscore board.",
+        "implementHeader": "Implementation Details",
+        "implementText": "Creation of the basic framework. Step-by-step implementation of the individual graphics. Creating the object or an inherited object (basic framework) → insert graphic → create animations → integrate logic → add sound effects → testing. Implementation of the dynamic scoreboard to be able to change the scoring at any time (REST-API). Implementation of a sound object with volume control. Creation of the two other game modes.",
+        "durHeader": "Duration",
+        "durTime": "Five Weeks"
+      },
+      "simplify": {
+        "header": "Simplify this life",
+        "descHeader": "Description",
+        "descText": "My own vision of an organization app. Built as a responsive web application designed for smartphones. Moving away from routine toward a custom interface and simple usability. No overloaded menus, settings, or features. Only the essentials at the core, presented in an easy-to-use UI. Mostly everything is within thumb reach. Currently in development – at the moment there is a shopping list and a todo list with priorities.",
+        "implementHeader": "Implementation details",
+        "implementText": "Creating a scalable and extensible architecture. The main screen serves as the foundation with expandable feature modules. Firebase will later be replaced by a custom backend. UPDATE 18.01.2025 - ToDo list feature implemented",
+        "implementUpdateToDo": "UPDATE 18.01.2025 - Completions implemented",
+        "implementUpdateToDoInfo": "Create tasks. Long-term, short-term, for work. Set priorities. Edit and move to trash.",
+        "implementUpdateFinance": "UPDATE 07.03.2025 - Finance overview implemented",
+        "implementUpdateFinanceText": "Enter and edit monthly income and expenses. Log daily expenses with name and category. Overview of the available amount for the current day. Calculated based on the entered data and the current month. Past data can be accessed when the month changes.",
+        "durHeader": "Duration",
+        "durTime": "In continuous development"
+      },
+      "schoolInfos": {
+        "header": "School Infos",
+        "descHeader": "Description",
+        "descText": "An information page for the parents of our school kids. All informations, appointments, holidays and open house from the middleschools on one page. It was built to solve a small issue some parents had.",
+        "implementHeader": "Implementation Details",
+        "implementText": "Created section by section with React components basic and vite, no other libraries or imports. Just clean",
+        "durHeader": "Duration",
+        "durTime": "One Week"
+      }
+    }
+  },
+  "thoughts": {
+    "words": "IN THEIR WORDS:",
+    "header": "Colleagues' Thoughts",
+    "colleagues": {
+      "first": {
+        "name": "Bernadette Pöltl",
+        "comment": "Joachim is not only strong in his professional expertise, but also a true asset on a personal level. Interacting with him is always open, honest, and inspiring – as a helpful colleague and a thoughtful front-end developer, he is a great support to me in my everyday life as a trainee.",
+        "link": ".",
+        "role": "Frontend Developer"
+      },
+      "second": {
+        "name": "Dominic Duchaczek",
+        "comment": "Joachim was always receptive to my concerns, requests, and questions. Even in high-pressure situations, he maintained a clear overview and never lost sight of the bigger picture. His calm and solution-oriented approach made him a reliable colleague one could always count on.",
+        "link": "https://www.linkedin.com/in/dominic-duchaczek-397b641b6/",
+        "role": "Project Manager"
+      },
+      "third": {
+        "name": "Eduard Fray",
+        "comment": "Collaborating with Joachim was truly enjoyable. He consistently encouraged the team and ensured we stayed focused while maintaining a positive and cohesive atmosphere. His friendly and supportive attitude made him an excellent colleague.",
+        "link": "https://www.linkedin.com/in/eduard-fray-696ba81a9/",
+        "role": "Frontend Developer"
+      }
+    },
+    "profile": "Profile"
+  },
+  "contactMe": {
+    "headerWords": "CONTACT ME",
+    "header": "Ready to work together?",
+    "mainTextFirst": "I'm looking forward to getting to know you and finding the perfect solution to your problem together. You can use this form to send me a message. Just enter your name, your email address, and a brief description of your request. Hit send – and you're done!",
+    "mainTextSecond": "Modern times call for modern solutions and timeless design. Let's get started!",
+    "form": {
+      "name": {
+        "header": "What's your name?",
+        "placeholder": "Your name goes here",
+        "error": "Oops! it seems your name is missing",
+        "errorMessage": "Enter a valid name"
+      },
+      "email": {
+        "header": "What's your email?",
+        "placeholder": "youremail@email.com",
+        "error": "Hoppla! your email is required",
+        "errorMessage": "Enter a valid email address"
+      },
+      "message": {
+        "header": "How can i help your?",
+        "placeholder": "Hello Joachim, i am interesetd in...",
+        "error": "What do you need to develop?"
+      },
+      "privacy": {
+        "firstPart": "I've read the",
+        "privacyPart": " privacy policy ",
+        "lastPart": "and agree to the proccesing of my data as outlined.",
+        "placeholder": "Please accept the privacy policy",
+        "error": "Please accept the privacy policy"
+      }
+    },
+    "sendButton": "Send",
+    "sentMessage": {
+      "headerText": {
+        "resolve": "Your message has been sent successfully.",
+        "error": "Oops, something went wrong."
+      },
+      "mainText": {
+        "resolve": "Thank you for your message. I will get back to you shortly.",
+        "error": "Sending failed. Please send me a message directly to my email address."
+      },
+      "buttonText": "Close"
+    }
+  },
+  "footer": {
+    "legal": "Legal Notice",
+    "imprint": "Imprint"
+  },
+  "dataSave": {
+    "header": "Information Obligation Statement",
+    "privacy": {
+      "header": "Privacy Policy",
+      "textOne": " In the following privacy policy, we inform you about the most important aspects of data processing on our website. We collect and process personal data only on the basis of the legal provisions (General Data Protection Regulation, Telecommunications Act 2003).",
+      "textTwo": "As soon as you, as a user, access or visit our website, your IP address, the beginning, and the end of the session are recorded. This is technically necessary and therefore constitutes a legitimate interest pursuant to Art 6 para 1 lit f GDPR."
+    },
+    "contactUs": {
+      "header": "Contacting Us",
+      "textOne": "If you contact us either via our contact form on our website or by email, the data you provide to us will be stored by us for six months for the purpose of processing your inquiry or in case of follow-up questions. Your data will not be passed on without your consent."
+    },
+    "cookies": {
+      "header": "Cookies",
+      "textOne": "Our website uses so-called cookies. These are small text files that are stored on your device with the help of the browser. They do no harm. We use cookies to make our offer user-friendly. Some cookies remain stored on your device until you delete them. They allow us to recognize your browser the next time you visit. If you do not wish this, you can set up your browser so that it informs you about the setting of cookies and you only allow this in individual cases. If cookies are deactivated, the functionality of our website may be limited."
+    },
+    "serverLog": {
+      "header": "Server Log Files",
+      "textOne": "This website and the associated provider automatically collect information in the course of website use within the framework of so-called 'server log files.' This particularly includes:",
+      "list": [
+        "IP address or hostname",
+        "the browser used",
+        "duration of stay on the website as well as date and time",
+        "accessed pages of the website",
+        "language settings and operating system",
+        "'Leaving page' (which URL the user left the website from)",
+        "ISP (Internet Service Provider)"
+      ],
+      "textTwo": "This collected information is not processed personally or linked with personal data.",
+      "textThree": " The website operator reserves the right to evaluate or check this data in the event of becoming aware of unlawful activities."
+    },
+    "rights": {
+      "header": "Your Rights as a Data Subject",
+      "textOne": "You, as the data subject, have the following rights concerning your data stored with us:",
+      "list": [
+        "Access",
+        "Deletion of data",
+        "Correction of data",
+        "Data portability",
+        "Revocation and objection to data processing",
+        "Restriction"
+      ],
+      "textTwo": "If you suspect that there have been violations of data protection laws in the processing of your data, you have the option to complain to us (contact@PuercherJoachim.com) or to the data protection authority."
+    },
+    "reach": {
+      "header": "You can reach us at the following contact details:",
+      "operator": "Website Operator:",
+      "phoneText": "Phone number:",
+      "source": "Source"
+    }
+  },
+  "imprint": {
+    "header": "Legal Notice",
+    "info": "Information about the service provider",
+    "phoneText": "Phone: ",
+    "liabilityHeader": "Liability for Content on This Website",
+    "liabilityText": "We strive to keep the content on this website up to date and accurate. However, we cannot guarantee the completeness, correctness, or timeliness of all information, especially that provided by third parties. As a service provider, we are not obligated to monitor transmitted or stored information or investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information in accordance with general laws remain unaffected, even if we are not responsible for the content. If you notice any problematic or unlawful content, please inform us promptly. Our contact details can be found in this legal notice.",
+    "linksHeader": "Liability for External Links",
+    "linksText": "This website contains links to external websites. We are not responsible for the content of those websites. Liability cannot be assumed, as we had no knowledge of any illegal activities at the time of linking and such activities have not come to our attention. If we become aware of any unlawful links, we will remove them immediately. Should you discover any such links, please notify us. You will find our contact details in the legal notice.",
+    "copyrightHeader": "Copyright Notice",
+    "copyrightText": "All content on this website (texts, images, videos, etc.) is protected by copyright. Please contact us before using, copying, or distributing any content – for example, by republishing it on other websites. We reserve the right to take legal action against unauthorized use of any part of our content. If you find any material that infringes copyright, please let us know.",
+    "onlineLinksHeader": "Additional Online Profiles",
+    "onlineLinksSubText": "This legal notice also applies to",
+    "onlineLinksText": "All content is protected by copyright"
+  },
+  "meta": {
+    "title": "Joachim Pürcher – Frontend Developer from Linz, Austria | Portfolio",
+    "description": "Portfolio of Joachim Pürcher, frontend developer based in Wilhering near Linz, Austria. React, Next.js, TypeScript and Angular: projects, skills and contact.",
+    "jobTitle": "Frontend Developer",
+    "heroHeading": "Joachim Pürcher – Frontend Developer",
+    "imprintTitle": "Legal notice",
+    "imprintDescription": "Legal notice and provider information for the website of Joachim Pürcher, frontend developer near Linz, Austria.",
+    "dataSaveTitle": "Privacy policy",
+    "dataSaveDescription": "Privacy policy of Joachim Pürcher's website: contact form, cookies, server log files and your rights.",
+    "projectTitle": "{name} – Project",
+    "notFoundTitle": "Page not found",
+    "notFoundText": "This page does not exist.",
+    "notFoundLink": "Go to home page"
+  }
+}
