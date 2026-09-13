@@ -1,0 +1,26 @@
+# Joachim Pürcher – Frontend Developer Portfolio
+
+> Portfolio of Joachim Pürcher, a frontend developer based in Wilhering near Linz, Upper Austria. He builds web applications with React, Next.js, TypeScript, Angular, Tailwind CSS and Firebase. Open to relocation and remote work. The site is available in German (/de) and English (/en).
+
+## Main pages
+
+- [Home (English)](https://www.puercherjoachim.com/en): about, skills, projects, testimonials and contact form
+- [Home (German)](https://www.puercherjoachim.com/de): about, skills, projects, testimonials and contact form
+
+## Projects
+
+- [Join](https://www.puercherjoachim.com/en/projects/join): Kanban-style task management app (HTML, CSS, JavaScript, Firebase)
+- [El Pollo Loco](https://www.puercherjoachim.com/en/projects/el-pollo-loco): object-oriented browser jump-and-run game (HTML, CSS, JavaScript)
+- [Simplify this life](https://www.puercherjoachim.com/en/projects/simplify): mobile-first organisation app (React, Next.js, TypeScript, Tailwind CSS, Firebase)
+- [Schoolinfos](https://www.puercherjoachim.com/en/projects/school-infos): information site for parents about secondary schools (React, TypeScript)
+
+## Contact and profiles
+
+- E-mail: contact@puercherjoachim.com
+- [LinkedIn](https://www.linkedin.com/in/joachim-pürcher-92b249345/)
+- [GitHub](https://github.com/JoachimPuercher)
+
+## Legal
+
+- [Legal notice](https://www.puercherjoachim.com/de/imprint)
+- [Privacy policy](https://www.puercherjoachim.com/de/data-save)
