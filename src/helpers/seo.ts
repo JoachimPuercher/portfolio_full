@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { routing, type Locale } from "@/i18n/routing";
 import { PROFILE_URLS } from "@/data/social-links";
-import { TECH_LOGOS } from "@/data/tech-logos";
+import { ALL_TECH_LOGOS } from "@/data/tech-logos";
 import { getTechLogos } from "@/data/projects";
 import type { ProjectInfo } from "@/types/model";
 
@@ -93,7 +93,7 @@ export function personJsonLd(locale: Locale, jobTitle: string, description: stri
       addressCountry: "AT",
     },
     homeLocation: { "@type": "Place", name: "Linz, Austria" },
-    knowsAbout: TECH_LOGOS.map((t) => t.name),
+    knowsAbout: ALL_TECH_LOGOS.map((t) => t.name),
     knowsLanguage: ["de", "en"],
     sameAs: [PROFILE_URLS.linkedin, PROFILE_URLS.github],
   };

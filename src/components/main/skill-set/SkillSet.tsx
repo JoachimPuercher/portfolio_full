@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- plain <img> keeps the image sizing of the Angular templates */
 import { useTranslations } from "next-intl";
 import { cn } from "@/helpers/cn";
-import { TECH_LOGOS } from "@/data/tech-logos";
+import { BACKEND_TECH_LOGOS, FRONTEND_TECH_LOGOS } from "@/data/tech-logos";
 import TechStackLogo from "@/components/shared/ui/tech-stack-logo/TechStackLogo";
 import PeelSticker from "./PeelSticker";
 import styles from "./SkillSet.module.css";
@@ -35,15 +35,18 @@ export default function SkillSet({ id }: { id?: string }) {
         </div>
 
         <div className={styles.bottomWrapper}>
-          <div className={styles.outer} />
+          {/* <div className={styles.outer} /> */}
           <div className={styles.logoWrapper} data-aos="fade">
-            {TECH_LOGOS.map((logo) => (
+            {FRONTEND_TECH_LOGOS.map((logo) => (
+              <TechStackLogo key={logo.name} {...logo} />
+            ))}
+            {BACKEND_TECH_LOGOS.map((logo) => (
               <TechStackLogo key={logo.name} {...logo} />
             ))}
           </div>
-          <div data-aos="fade-left">
+          {/* <div data-aos="fade-left">
             <PeelSticker />
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

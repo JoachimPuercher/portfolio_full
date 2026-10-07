@@ -1,5 +1,5 @@
 import type { ProjectInfo, TechLogo } from "@/types/model";
-import { TECH_LOGOS } from "./tech-logos";
+import { FRONTEND_TECH_LOGOS } from "./tech-logos";
 
 /**
  * Ported from ProjectDetailsService (Angular).
@@ -84,5 +84,5 @@ export function getPrevProject(slug: string): ProjectInfo {
  * "vite" has no logo in TECH_LOGOS and is therefore dropped, same as in Angular.
  */
 export function getTechLogos(project: ProjectInfo): TechLogo[] {
-  return TECH_LOGOS.filter((logo) => project.usedTechs.includes(logo.name.toLocaleLowerCase()));
+  return FRONTEND_TECH_LOGOS.filter((logo) => project.usedTechs.includes(logo.name.toLocaleLowerCase()));
 }

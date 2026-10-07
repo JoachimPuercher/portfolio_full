@@ -1,7 +1,7 @@
 import type { TechLogo } from "@/types/model";
 
 /** Ported from TechlogoService (Angular). Order defines the skill grid order. */
-export const TECH_LOGOS: TechLogo[] = [
+export const FRONTEND_TECH_LOGOS: TechLogo[] = [
   { name: "React", imgPath: "/images/skills/techlogos/react.svg", imgAltText: "React Logo" },
   { name: "Next", imgPath: "/images/skills/techlogos/nextjs.svg", imgAltText: "NextJs Logo" },
   { name: "TypeScript", imgPath: "/images/skills/techlogos/typescript.png", imgAltText: "TS Logo" },
@@ -16,3 +16,17 @@ export const TECH_LOGOS: TechLogo[] = [
   { name: "Scrum", imgPath: "/images/skills/techlogos/scrum.png", imgAltText: "Scrum Logo" },
   { name: "Angular", imgPath: "/images/skills/techlogos/angular.png", imgAltText: "Angular Logo" },
 ];
+
+export const BACKEND_TECH_LOGOS: TechLogo[] = [
+  { name: "Python", imgPath: "/images/skills/techlogos/python.svg", imgAltText: "Python Logo" },
+  { name: "Django", imgPath: "/images/skills/techlogos/django.svg", imgAltText: "Django Logo" },
+  { name: "DRF", imgPath: "/images/skills/techlogos/drf.svg", imgAltText: "DRF Logo" },
+  { name: "Hono", imgPath: "/images/skills/techlogos/hono.svg", imgAltText: "Hono Logo" },
+  { name: "Linux", imgPath: "/images/skills/techlogos/linux.svg", imgAltText: "Linux Logo" },
+  { name: "Docker", imgPath: "/images/skills/techlogos/docker.svg", imgAltText: "Docker Logo" },
+  { name: "Redis", imgPath: "/images/skills/techlogos/redis.svg", imgAltText: "Redis Logo" },
+  { name: "PostgreSQL", imgPath: "/images/skills/techlogos/postgresql.svg", imgAltText: "PostgreSQL Logo" },
+];
+
+/** Both skill groups in grid order: frontend first, then backend (JSON-LD, project tech matching). */
+export const ALL_TECH_LOGOS: TechLogo[] = [...FRONTEND_TECH_LOGOS, ...BACKEND_TECH_LOGOS];
