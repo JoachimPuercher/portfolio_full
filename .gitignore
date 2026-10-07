@@ -47,3 +47,18 @@ next-env.d.ts
 /playwright-report/
 /test-results/
 /compare/
+
+# editor
+/.vscode/
+/.idea/
+
+# other package managers (project uses npm)
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock
+bun.lock*
+
+things.md
+.things.md
+# local AI assistant instructions
+CLAUDE.md
