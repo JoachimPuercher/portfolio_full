@@ -9,14 +9,14 @@ import type { TechLogo } from "@/types/model";
  */
 export default function TechStackLogo({ imgPath, imgAltText, name }: TechLogo) {
   return (
-    <div className="group flex flex-col items-center justify-center gap-1 self-start">
+    <div className="group flex flex-col items-center justify-center gap-1 w-[90px] h-[90px]">
       <img
         src={imgPath}
         alt={imgAltText}
         loading="lazy"
-        className="h-[72px] w-[72px] grayscale-[0.8] group-hover:scale-[0.85] group-hover:grayscale-0 group-hover:transition-all group-hover:duration-100 group-hover:ease-in touch:grayscale-0"
+        className="h-[64px] w-[64px] grayscale-[0.8] group-hover:scale-[0.85] group-hover:grayscale-0 group-hover:transition-all group-hover:duration-100 group-hover:ease-in touch:grayscale-0"
       />
-      <span className="text-center font-bricolage text-[18px] font-normal">{name}</span>
+      <span className="text-center font-bricolage text-[16px] font-normal">{name}</span>
     </div>
   );
 }
