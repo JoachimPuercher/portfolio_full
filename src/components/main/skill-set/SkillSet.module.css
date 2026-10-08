@@ -7,11 +7,11 @@
   background-position: bottom;
   color: var(--color-main-white);
 }
-@media (min-width: 2000px) {
+@media (min-width: 1021px) and (max-width: 1250px) {
   .background {
-    min-height: 800px;
+    min-height: 1300px;
     height: 26dvw;
-    max-height: 1000px;
+    max-height: 2000px;
   }
 }
 
@@ -50,8 +50,56 @@
   .topWrapper > .left {
     margin: 0 0 0 auto;
   }
+  /* Stacked: the sticker keeps its place, now centred below the intro text. */
   .topWrapper .right {
-    display: none;
+    width: auto;
+    justify-content: center;
+  }
+}
+
+/* Opposite the heading: the peel-off sticker, right-aligned inside the 261px column. */
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1250px)  {
+.right {
+  display: none;
+}
+}
+
+.bottompeel {
+  display: none;
+}
+
+@media (min-width: 1021px) and (max-width: 1250px) {
+  .bottompeel {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+  }
+}
+
+/* Below 1020px the sticker leaves the absolute layer: it simply follows the backend
+   logos, centred, and takes its own space. The only rule for it in this range. */
+@media (max-width: 1020px) {
+  /* No fixed height here: the wallpaper is exactly as tall as the section, which now
+     includes the sticker, so nothing can spill out and no empty strip is left over. */
+  .background {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    /* 50px of wallpaper below the section, so the sticker is not flush with the edge. */
+    padding-bottom: 50px;
+  }
+  .bottompeel {
+    display: flex;
+    justify-content: center;
+    position: static;
+    align-self: center;
+    margin-top: 8px;
   }
 }
 
@@ -123,63 +171,63 @@
 
 .bottomWrapper {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Same gap as .topWrapper, so both rows share the section padding as their edges. */
   gap: 48px;
+  margin-top: 48px;
 }
+/* Same breakpoint as .topWrapper: the two groups stack and fill the mobile width. */
 @media (max-width: 1250px) {
   .bottomWrapper {
+    flex-direction: column;
+    align-items: stretch;
     margin: 0 auto;
     width: 90dvw;
+    gap: 48px;
   }
 }
 @media (max-width: 700px) {
   .bottomWrapper {
-    flex-direction: column;
     margin-top: 36px;
+    gap: 36px;
   }
 }
-.bottomWrapper > .outer:nth-child(1) {
-  cursor: var(--cursor-default);
+
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 560px
 }
 @media (max-width: 1250px) {
-  .bottomWrapper > .outer:nth-child(1) {
-    display: none;
+  .skillGroup {
+    width: 100%;
+    max-width: none;
   }
 }
 
 .logoWrapper {
-  width: 640px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 96px);
-  grid-template-rows: auto;
-  column-gap: 40px;
-  row-gap: 40px;
-  margin: 48px auto;
-  justify-content: flex-end;
+  /* Fixed tracks, not minmax/1fr: justify-content then centres the whole column block
+     while the items keep filling each row from the start, so a short last row sits left. */
+  grid-template-columns: repeat(auto-fit, 96px);
+  gap: 40px;
+  justify-content: stretch;
 }
 @media (max-width: 1250px) {
   .logoWrapper {
-    margin: 48px 0;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-  }
-}
-@media (max-width: 1150px) {
-  .logoWrapper {
-    margin-bottom: 0;
-    justify-content: space-evenly;
-  }
-}
-@media (max-width: 850px) {
-  .logoWrapper {
-    grid-template-columns: repeat(3, 96px);
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 @media (max-width: 540px) {
   .logoWrapper {
-    width: 100%;
-    column-gap: 0;
+    gap: 24px;
   }
 }
 
@@ -198,6 +246,11 @@
 }
 @media (max-width: 700px) {
   .outer {
-    transform: translate(50px, -140px) rotate(8deg);
+    width: 160px;
+    height: 160px;
+  }
+  .outer > img {
+    width: 160px;
+    height: 160px;
   }
 }

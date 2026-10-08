@@ -8,8 +8,9 @@ import styles from "./SkillSet.module.css";
 
 /**
  * Angular: main/skill-set.
- * Heading with the rotating pen stroke, intro text on a paper hole, the tech logo grid
- * and a peel-off sticker. Server component; only the sticker is interactive.
+ * Heading with the rotating pen stroke, intro text on a paper hole and the tech logo
+ * grids, split into a frontend and a backend group. The peel-off sticker sits opposite
+ * the heading; it is the only interactive part.
  */
 export default function SkillSet({ id }: { id?: string }) {
   const t = useTranslations("skills");
@@ -31,20 +32,30 @@ export default function SkillSet({ id }: { id?: string }) {
             <img src="/images/skills/skill-hole.png" alt="" loading="lazy" />
           </div>
 
-          <div className={styles.right} />
+          <div className={styles.right} data-aos="fade-left">
+            <PeelSticker />
+          </div>
         </div>
 
         <div className={styles.bottomWrapper}>
-          <div className={styles.outer} />
-          <div className={styles.logoWrapper} data-aos="fade">
-            {FRONTEND_TECH_LOGOS.map((logo) => (
-              <TechStackLogo key={logo.name} {...logo} />
-            ))}
-            {/* {BACKEND_TECH_LOGOS.map((logo) => (
-              <TechStackLogo key={logo.name} {...logo} />
-            ))} */}
+          <div className={styles.skillGroup} data-aos="fade">
+            <h3 className={cn("section-header-small-text-typo", styles.groupHeader)}>{t("frontend")}</h3>
+            <div className={styles.logoWrapper}>
+              {FRONTEND_TECH_LOGOS.map((logo) => (
+                <TechStackLogo key={logo.name} {...logo} />
+              ))}
+            </div>
           </div>
-          <div data-aos="fade-left">
+
+          <div className={styles.skillGroup} data-aos="fade">
+            <h3 className={cn("section-header-small-text-typo", styles.groupHeader)}>{t("backend")}</h3>
+            <div className={styles.logoWrapper}>
+              {BACKEND_TECH_LOGOS.map((logo) => (
+                <TechStackLogo key={logo.name} {...logo} />
+              ))}
+            </div>
+          </div>
+                    <div className={styles.bottompeel} data-aos="fade-left">
             <PeelSticker />
           </div>
         </div>
