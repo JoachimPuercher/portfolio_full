@@ -35,18 +35,18 @@ export default function SkillSet({ id }: { id?: string }) {
         </div>
 
         <div className={styles.bottomWrapper}>
-          {/* <div className={styles.outer} /> */}
+          <div className={styles.outer} />
           <div className={styles.logoWrapper} data-aos="fade">
             {FRONTEND_TECH_LOGOS.map((logo) => (
               <TechStackLogo key={logo.name} {...logo} />
             ))}
-            {BACKEND_TECH_LOGOS.map((logo) => (
+            {/* {BACKEND_TECH_LOGOS.map((logo) => (
               <TechStackLogo key={logo.name} {...logo} />
-            ))}
+            ))} */}
           </div>
-          {/* <div data-aos="fade-left">
+          <div data-aos="fade-left">
             <PeelSticker />
-          </div> */}
+          </div>
         </div>
       </section>
     </div>
