@@ -6,8 +6,8 @@ import { useLocale } from "next-intl";
 import styles from "./SkillSet.module.css";
 
 const STICKERS = {
-  en: ["/images/skills/sticker_close.png", "/images/skills/sticker_middle.png", "/images/skills/sticker-open-new-en.png"],
-  de: ["/images/skills/peel_de_one.png", "/images/skills/sticker_middle.png", "/images/skills/sticker-open-new-de.png"],
+  en: ["/images/skills/sticker_close.png", "/images/skills/sticker_middle.png", "/images/skills/peel_3_en.png"],
+  de: ["/images/skills/peel_de_one.png", "/images/skills/sticker_middle.png", "/images/skills/peel_3_de.png"],
 } as const;
 
 /**
