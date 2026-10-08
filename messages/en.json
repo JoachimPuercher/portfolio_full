@@ -45,8 +45,10 @@
   },
   "skills": {
     "myStack": "MY STACK",
+    "frontend": "Frontend",
+    "backend": "Backend",
     "header": "Skill Set",
-    "introduction": "In the past, I created many projects while learning the following skill set. These skills are constantly being expanded to keep up with the times."
+    "introduction": "Across many completed projects I have acquired a wide range of skills. I keep expanding them continuously to keep up with the latest requirements."
   },
   "projects": {
     "craft": "MY CRAFT",

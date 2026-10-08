@@ -46,8 +46,10 @@
   },
   "skills": {
     "myStack": "MEIN TECH-STACK",
+    "frontend": "Frontend",
+    "backend": "Backend",
     "header": "Skill Set",
-    "introduction": "Durch zahlreiche abgeschlossene Projekte konnte ich mir die folgenden Fähigkeiten aneignen. Diese entwickle ich kontinuierlich weiter, um mit den neuesten Anforderungen Schritt zu halten."
+    "introduction": "Durch zahlreiche abgeschlossene Projekte konnte ich mir viele Fähigkeiten aneignen. Diese entwickle ich kontinuierlich weiter, um mit den neuesten Anforderungen Schritt zu halten."
   },
   "projects": {
     "craft": "MEINE",
