@@ -6,7 +6,7 @@ import ProjectLinkButton from "@/components/shared/ui/project-link-button/Projec
 import ProjectOverview from "./ProjectOverview";
 import styles from "./MyFrontendProjects.module.css";
 
-/** Angular AOS direction per project card (join, el pollo loco, simplify, coderr). */
+/** Angular AOS direction per project card (join, el pollo loco, videoflix, coderr). */
 const AOS_DIRECTION = ["fade-right", "fade-left", "fade-right", "fade-right"] as const;
 
 /**

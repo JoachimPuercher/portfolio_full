@@ -13,7 +13,8 @@ interface RightContentProps {
 /**
  * Angular: my-projects/project-detail/right-content.
  * Screenshot with a sticker (the "featured" sticker for Join, the gold logo sticker
- * for every other project) and the GitHub / live test buttons.
+ * for every other project) and the GitHub / live test buttons. The live test button
+ * only exists for projects that have a deployment.
  */
 export default function RightContent({ project, title }: RightContentProps) {
   return (
@@ -35,9 +36,11 @@ export default function RightContent({ project, title }: RightContentProps) {
         <MainButton variant="light" href={project.gitButtonLink} target="_blank">
           Git Hub
         </MainButton>
-        <MainButton variant="light" href={project.liveTestLink} target="_blank">
-          Live Test
-        </MainButton>
+        {project.liveTestLink && (
+          <MainButton variant="light" href={project.liveTestLink} target="_blank">
+            Live Test
+          </MainButton>
+        )}
       </div>
     </div>
   );

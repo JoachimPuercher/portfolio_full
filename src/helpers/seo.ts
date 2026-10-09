@@ -120,7 +120,9 @@ export function projectJsonLd(project: ProjectInfo, locale: Locale, name: string
     description,
     url: localizedUrl(locale, `/projects/${project.slug}`),
     codeRepository: project.gitButtonLink,
-    targetProduct: { "@type": "WebApplication", name, url: project.liveTestLink, applicationCategory: "WebApplication", operatingSystem: "Web" },
+    ...(project.liveTestLink && {
+      targetProduct: { "@type": "WebApplication", name, url: project.liveTestLink, applicationCategory: "WebApplication", operatingSystem: "Web" },
+    }),
     programmingLanguage: getTechLogos(project).map((t) => t.name),
     image: `${SITE_URL}${project.img}`,
     inLanguage: locale,

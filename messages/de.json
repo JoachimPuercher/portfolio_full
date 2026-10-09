@@ -78,18 +78,14 @@
         "durHeader": "Dauer",
         "durTime": "6 Wochen"
       },
-      "simplify": {
-        "header": "Simplify this life",
+      "videoflix": {
+        "header": "Videoflix",
         "descHeader": "Beschreibung",
-        "descText": "Meine eigene Vision einer Organisierungs Anwendung. Geschrieben als responsive Web Anwendung, ausgelegt für Smartphones. Keine überladenen Menüs, Einstellungen und Möglichkeiten. Nur das Wichtigste im Kern, in einem einfach zu bedienenden UI. Großteils alles im Daumenbereich.",
+        "descText": "Backend für eine kleine Video-Streaming-Plattform. Nutzer registrieren sich mit E-Mail und Passwort, aktivieren ihr Konto per Mail, loggen sich mit JWT-Cookies ein und streamen hochgeladene Videos als HLS in 480p, 720p und 1080p. Die REST-API habe ich gebaut, das Frontend war von der Developer Akademie vorgegeben. Noch kein öffentliches Deployment, siehe Repository.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Erstellen einer skalierbaren und erweiterbaren Architektur. Der Main Screen als Basis mit den erweiterbaren Featuremodulen. Firebase wird später durch ein eigenes Back End ersetzt.",
-        "implementUpdateToDo": "UPDATE 18.01.2025 - Erledigungen implementiert",
-        "implementUpdateToDoInfo": "Erledigungen erstellen. Langfristige, Kurzfristige, für die Arbeit. Mit Prioritäten versehen. Editieren und in den Papierkorb verschieben.",
-        "implementUpdateFinance": "UPDATE 07.03.2025 - Finanzübersicht implementiert",
-        "implementUpdateFinanceText": "Monatliche Ein- und Ausgaben eingeben und editieren. Tägliche Ausgaben mit Name und Kategorie eintragen. Übersicht des am aktuellen Tag zur Verfügung stehenden Betrages. Kalkuliert anhand der eingegebenen Daten und des aktuellen Monats. Bei Monatswechsel, aufrufen der vergangenen Daten möglich.",
+        "implementText": "Django REST Framework mit Simple JWT in HttpOnly-Cookies, Kontoaktivierung und Passwort-Reset per Mail. PostgreSQL als Datenbank, Redis mit django-rq für Hintergrundjobs: jeder Upload stößt ffmpeg-Jobs an, die das Video in HLS-Playlists pro Auflösung umwandeln, ein weiterer Job holt das Vorschaubild. Hochgeladene Thumbnails werden mit Pillow geprüft und neu kodiert. Auch Mails gehen über die Queue, Requests warten nie auf SMTP. Alles läuft in Docker Compose (db, redis, web) mit einem Entrypoint, der migriert, statische Dateien sammelt und rq-Worker sowie gunicorn startet. Tests für Auth- und Content-Endpunkte.",
         "durHeader": "Dauer",
-        "durTime": "In ständiger Weiterentwicklung"
+        "durTime": "Zwei Wochen"
       },
       "coderr": {
         "header": "Coderr",

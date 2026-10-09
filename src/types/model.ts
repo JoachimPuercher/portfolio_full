@@ -17,7 +17,7 @@ export interface TechLogo {
 }
 
 /** i18n key under `projects.projectDetails.*` */
-export type ProjectKey = "join" | "elpolloloco" | "simplify" | "coderr";
+export type ProjectKey = "join" | "elpolloloco" | "videoflix" | "coderr";
 
 export interface ProjectInfo {
   /** URL segment: /[locale]/projects/[slug] */
@@ -28,7 +28,8 @@ export interface ProjectInfo {
   sticker: string;
   usedTechs: string[];
   gitButtonLink: string;
-  liveTestLink: string;
+  /** Optional: a project without a deployment shows no "Live Test" button */
+  liveTestLink?: string;
   /** Overview card image (my-frontend-projects section) */
   overviewImg: string;
   overviewImgAlt: string;

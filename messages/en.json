@@ -77,18 +77,14 @@
         "durHeader": "Duration",
         "durTime": "Five Weeks"
       },
-      "simplify": {
-        "header": "Simplify this life",
+      "videoflix": {
+        "header": "Videoflix",
         "descHeader": "Description",
-        "descText": "My own vision of an organization app. Built as a responsive web application designed for smartphones. Moving away from routine toward a custom interface and simple usability. No overloaded menus, settings, or features. Only the essentials at the core, presented in an easy-to-use UI. Mostly everything is within thumb reach. Currently in development – at the moment there is a shopping list and a todo list with priorities.",
-        "implementHeader": "Implementation details",
-        "implementText": "Creating a scalable and extensible architecture. The main screen serves as the foundation with expandable feature modules. Firebase will later be replaced by a custom backend. UPDATE 18.01.2025 - ToDo list feature implemented",
-        "implementUpdateToDo": "UPDATE 18.01.2025 - Completions implemented",
-        "implementUpdateToDoInfo": "Create tasks. Long-term, short-term, for work. Set priorities. Edit and move to trash.",
-        "implementUpdateFinance": "UPDATE 07.03.2025 - Finance overview implemented",
-        "implementUpdateFinanceText": "Enter and edit monthly income and expenses. Log daily expenses with name and category. Overview of the available amount for the current day. Calculated based on the entered data and the current month. Past data can be accessed when the month changes.",
+        "descText": "Backend for a small video streaming platform. Users register with e-mail and password, activate their account via mail, log in with JWT cookies and stream uploaded videos as HLS in 480p, 720p and 1080p. I built the REST API, the frontend was given by the Developer Akademie. No public deployment yet, see the repository.",
+        "implementHeader": "Implementation Details",
+        "implementText": "Django REST Framework with Simple JWT in HttpOnly cookies, account activation and password reset by mail. PostgreSQL as database, Redis with django-rq for background jobs: every upload triggers ffmpeg jobs that transcode the video into HLS playlists per resolution, a further job grabs the thumbnail. Uploaded thumbnails are validated and re-encoded with Pillow. Mails are sent from the queue as well, so requests never wait for SMTP. Everything runs in Docker Compose (db, redis, web) with an entrypoint that migrates, collects static files and starts the rq worker and gunicorn. Tests for auth and content endpoints.",
         "durHeader": "Duration",
-        "durTime": "In continuous development"
+        "durTime": "Two Weeks"
       },
       "coderr": {
         "header": "Coderr",

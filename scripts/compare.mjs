@@ -52,7 +52,7 @@ const SCENES = [
   { name: "datasave-1-top", page: "data-save" },
   { name: "datasave-2-bottom", page: "data-save", bottom: true },
   { name: "project-join", page: "project", nextClicks: 0, slug: "join" },
-  { name: "project-simplify", page: "project", nextClicks: 2, slug: "simplify" },
+  { name: "project-videoflix", page: "project", nextClicks: 2, slug: "videoflix" },
 ];
 
 const URLS = {

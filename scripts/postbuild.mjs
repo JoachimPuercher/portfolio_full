@@ -24,7 +24,7 @@ const REQUIRED = [
     `${l}/data-save/index.html`,
     `${l}/projects/join/index.html`,
     `${l}/projects/el-pollo-loco/index.html`,
-    `${l}/projects/simplify/index.html`,
+    `${l}/projects/videoflix/index.html`,
     `${l}/projects/coderr/index.html`,
   ]),
 ];

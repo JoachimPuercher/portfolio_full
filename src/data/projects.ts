@@ -4,7 +4,7 @@ import { ALL_TECH_LOGOS } from "./tech-logos";
 /**
  * Ported from ProjectDetailsService (Angular).
  * The mutable `projectPos` state is gone: the active project is the URL slug.
- * Order equals the Angular `projectArr` order (join, elpolloloco, simplify); coderr replaced schoolInfos.
+ * Order equals the Angular `projectArr` order (join, elpolloloco); videoflix and coderr replaced simplify and schoolInfos.
  */
 export const PROJECTS: ProjectInfo[] = [
   {
@@ -32,15 +32,14 @@ export const PROJECTS: ProjectInfo[] = [
     overviewAnimate: false,
   },
   {
-    slug: "simplify",
-    key: "simplify",
-    img: "/images/projects/project-details/simplify/simplify-details-screen.webp",
+    slug: "videoflix",
+    key: "videoflix",
+    img: "/images/projects/project-details/videoflix/videoflix.webp",
     sticker: "/images/projects/project-details/Sticker.png",
-    usedTechs: ["html", "scss", "typescript", "react", "next", "firebase", "tailwind css"],
-    gitButtonLink: "https://github.com/JoachimPuercher/simplifythislife",
-    liveTestLink: "https://www.puercherjoachim.com/simplify/",
-    overviewImg: "/images/projects/simplify-main-screen.webp",
-    overviewImgAlt: "simplify this life screen",
+    usedTechs: ["python", "django", "drf", "rest-api", "postgresql", "redis", "docker", "linux"],
+    gitButtonLink: "https://github.com/JoachimPuercher/videoflix_backend",
+    overviewImg: "/images/projects/project-details/videoflix/videoflix.webp",
+    overviewImgAlt: "videoflix landing page",
     overviewAnimate: false,
   },
   {
