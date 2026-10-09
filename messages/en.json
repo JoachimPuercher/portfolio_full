@@ -71,7 +71,7 @@
       "join": {
         "header": "Join",
         "descHeader": "Description",
-        "descText": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "descText": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. Frontend only.",
         "implementHeader": "Implementation Details",
         "implementText": "Creating the individual Kanban tasks for the team. Assigning them to the respective team members. Designing all sections based on the design template (Figma). Creating the database structure in Firebase. Implementing data processing from the API. Integrating the data into the individual sections. Testing. Consistent, responsive design according to the design template (Figma).",
         "durHeader": "Duration",
@@ -89,7 +89,7 @@
       "videoflix": {
         "header": "Videoflix",
         "descHeader": "Description",
-        "descText": "Backend for a small video streaming platform. Users register with e-mail and password, activate their account via mail, log in with JWT cookies and stream uploaded videos as HLS in 480p, 720p and 1080p. I built the REST API, the frontend was given by the Developer Akademie. No public deployment yet, see the repository.",
+        "descText": "Backend for a small video streaming platform. Users register with e-mail and password, activate their account via mail, log in with JWT cookies and stream uploaded videos as HLS in 480p, 720p and 1080p. Backend only, no public deployment yet, see the repository.",
         "implementHeader": "Implementation Details",
         "implementText": "Django REST Framework with Simple JWT in HttpOnly cookies, account activation and password reset by mail. PostgreSQL as database, Redis with django-rq for background jobs: every upload triggers ffmpeg jobs that transcode the video into HLS playlists per resolution, a further job grabs the thumbnail. Uploaded thumbnails are validated and re-encoded with Pillow. Mails are sent from the queue as well, so requests never wait for SMTP. Everything runs in Docker Compose (db, redis, web) with an entrypoint that migrates, collects static files and starts the rq worker and gunicorn. Tests for auth and content endpoints.",
         "durHeader": "Duration",
@@ -98,7 +98,7 @@
       "coderr": {
         "header": "Coderr",
         "descHeader": "Description",
-        "descText": "Full stack platform for IT services. Business users publish offers with three packages, customers order them and rate the provider afterwards. I built the REST API behind it, the frontend was given as a specification by the Developer Akademie. Hosted on my own netcup server.",
+        "descText": "Full stack platform for IT services. Business users publish offers with three packages, customers order them and rate the provider afterwards. Full stack project, ready to test live. Hosted on my own netcup server.",
         "implementHeader": "Implementation Details",
         "implementText": "Django REST Framework API against a given specification. Token authentication with registration and login. Two roles (business and customer) with object level permissions for owner, provider and staff. Nested serializers for offers and their packages, orders that copy the offer conditions, reviews once per provider. Filtering, search, ordering and pagination. Rate limiting per endpoint. Integration tests for the happy path and the 400, 401, 403 and 404 cases. Deployed as a Docker container with gunicorn behind nginx on a Linux vServer that I set up myself.",
         "durHeader": "Duration",

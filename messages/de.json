@@ -72,7 +72,7 @@
       "join": {
         "header": "Join",
         "descHeader": "Beschreibung",
-        "descText": "Eine professionelle Task-Management-App, inspiriert vom bekannten Kanban-Konzept. Zum Erstellen und Organisieren von Arbeitsabläufen, Zuteilen von Mitgliedern und Verwalten per drag and drop.",
+        "descText": "Eine professionelle Task-Management-App, inspiriert vom bekannten Kanban-Konzept. Zum Erstellen und Organisieren von Arbeitsabläufen, Zuteilen von Mitgliedern und Verwalten per drag and drop. Nur Frontend.",
         "implementHeader": "Implementierung",
         "implementText": "Erstellen der einzelnen Kanban-Tasks für das Team. Zuweisung an die einzelnen Personen. Erstellung des Designs aller Sektionen per Designvorlage (Figma). Erstellung der Datenbankstruktur in Firebase. Implementierung der Datenaufbereitung von der API. Einbindung der Daten in die einzelnen Sektionen. Testing. Einheitliches, responsives Design laut Designvorlage (Figma).",
         "durHeader": "Dauer",
@@ -90,7 +90,7 @@
       "videoflix": {
         "header": "Videoflix",
         "descHeader": "Beschreibung",
-        "descText": "Backend für eine kleine Video-Streaming-Plattform. Nutzer registrieren sich mit E-Mail und Passwort, aktivieren ihr Konto per Mail, loggen sich mit JWT-Cookies ein und streamen hochgeladene Videos als HLS in 480p, 720p und 1080p. Die REST-API habe ich gebaut, das Frontend war von der Developer Akademie vorgegeben. Noch kein öffentliches Deployment, siehe Repository.",
+        "descText": "Backend für eine kleine Video-Streaming-Plattform. Nutzer registrieren sich mit E-Mail und Passwort, aktivieren ihr Konto per Mail, loggen sich mit JWT-Cookies ein und streamen hochgeladene Videos als HLS in 480p, 720p und 1080p. Nur Backend, noch kein öffentliches Deployment, siehe Repository.",
         "implementHeader": "Implementierungsdetails",
         "implementText": "Django REST Framework mit Simple JWT in HttpOnly-Cookies, Kontoaktivierung und Passwort-Reset per Mail. PostgreSQL als Datenbank, Redis mit django-rq für Hintergrundjobs: jeder Upload stößt ffmpeg-Jobs an, die das Video in HLS-Playlists pro Auflösung umwandeln, ein weiterer Job holt das Vorschaubild. Hochgeladene Thumbnails werden mit Pillow geprüft und neu kodiert. Auch Mails gehen über die Queue, Requests warten nie auf SMTP. Alles läuft in Docker Compose (db, redis, web) mit einem Entrypoint, der migriert, statische Dateien sammelt und rq-Worker sowie gunicorn startet. Tests für Auth- und Content-Endpunkte.",
         "durHeader": "Dauer",
@@ -99,7 +99,7 @@
       "coderr": {
         "header": "Coderr",
         "descHeader": "Beschreibung",
-        "descText": "Full-Stack-Plattform für IT-Dienstleistungen. Business-Nutzer veröffentlichen Angebote mit drei Paketen, Kunden bestellen sie und bewerten anschließend den Anbieter. Die REST-API dahinter habe ich gebaut, das Frontend war als Vorgabe der Developer Akademie gegeben. Gehostet auf meinem eigenen netcup Server.",
+        "descText": "Full-Stack-Plattform für IT-Dienstleistungen. Business-Nutzer veröffentlichen Angebote mit drei Paketen, Kunden bestellen sie und bewerten anschließend den Anbieter. Full-Stack-Projekt, live zum Testen. Gehostet auf meinem eigenen netcup Server.",
         "implementHeader": "Implementierungsdetails",
         "implementText": "Django REST Framework API nach einer vorgegebenen Spezifikation. Token-Authentifizierung mit Registrierung und Login. Zwei Rollen (Business und Kunde) mit Objektberechtigungen für Besitzer, Anbieter und Staff. Verschachtelte Serializer für Angebote und ihre Pakete, Bestellungen, die die Angebotskonditionen kopieren, Bewertungen einmal pro Anbieter. Filtern, Suchen, Sortieren und Pagination. Rate Limiting pro Endpunkt. Integrationstests für den Happy Path und die Fälle 400, 401, 403 und 404. Deployment als Docker-Container mit gunicorn hinter nginx auf einem selbst eingerichteten Linux vServer.",
         "durHeader": "Dauer",
