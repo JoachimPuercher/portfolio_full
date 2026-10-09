@@ -11,13 +11,14 @@
     "mainSingle": {
       "frontendFirst": "F",
       "frontendLast": [
-        "r",
-        "o",
-        "n",
+        "u",
+        "l",
+        "l",
+        "s",
         "t",
-        "e",
-        "n",
-        "d"
+        "a",
+        "c",
+        "k"
       ],
       "developer": [
         "E",
@@ -36,11 +37,11 @@
   },
   "aboutMe": {
     "basedIn": "Wohnsitz in Wilhering/Linz",
-    "relocate": "Offen für einen Umzug",
+    "availableFrom": "Verfügbar ab Jänner 2027",
     "remote": "Offen für Homeoffice",
     "who": "WER IST JOACHIM",
     "header": "Über mich",
-    "text": "Ich bin Frontend-Webentwickler und habe eine echte Leidenschaft für das Erstellen von Webanwendungen. Für mich geht es nicht nur darum, Code zu schreiben oder die neuesten Technologien zu nutzen – es geht darum, Lösungen zu finden, die gut durchdacht und benutzerfreundlich sind. Es ist mir wichtig, Anwendung zu erstellen, die dem Benutzer einen echte Mehrwert bieten und auch nach Jahren noch wartbar sind. Dabei halte ich mich an die aktuellen 'best practices' und sauberen Code.",
+    "text": "Ich bin Fullstack-Entwickler und entwickle Webanwendungen sowie native Apps – vom Interface über die API bis zur Datenbank. Seit knapp einem Jahr betreue ich Pulsify mit nativer App, Dashboard und Hono-Backend. Parallel baue ich unter der Marke byButterfly eigene Produkte auf, von der Produktanalyse bis zur fertigen App. Entscheidend ist dabei nicht die neueste Technologie, sondern die Lösung dahinter: durchdacht, benutzerfreundlich und auch nach Jahren wartbar. So entstehen Produkte, die für beide Seiten ein Gewinn sind: echter Mehrwert für die Nutzer, messbarer Nutzen für das Unternehmen.",
     "collaborate": "Ich freue mich darauf, gemeinsam etwas Großartiges zu schaffen!",
     "button": "Kontakt aufnehmen"
   },
@@ -241,8 +242,8 @@
   "meta": {
     "title": "Joachim Pürcher – Frontend Entwickler aus Linz | Portfolio",
     "description": "Portfolio von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz (Österreich). React, Next.js, TypeScript und Angular: Projekte, Skills und Kontakt.",
-    "jobTitle": "Frontend Entwickler",
-    "heroHeading": "Joachim Pürcher – Frontend Entwickler",
+    "jobTitle": "Fullstack Entwickler",
+    "heroHeading": "Joachim Pürcher – Fullstack Entwickler",
     "imprintTitle": "Impressum",
     "imprintDescription": "Impressum und Angaben zum Diensteanbieter der Website von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz.",
     "dataSaveTitle": "Datenschutzerklärung",

@@ -11,13 +11,14 @@
     "mainSingle": {
       "frontendFirst": "F",
       "frontendLast": [
-        "r",
-        "o",
-        "n",
+        "u",
+        "l",
+        "l",
+        "s",
         "t",
-        "e",
-        "n",
-        "d"
+        "a",
+        "c",
+        "k"
       ],
       "developer": [
         "D",
@@ -35,11 +36,11 @@
   },
   "aboutMe": {
     "basedIn": "Based in Wilhering/Linz",
-    "relocate": "Open to relocate",
+    "availableFrom": "Available from January 2027",
     "remote": "Open to work remote",
     "who": "WHO'S JOACHIM",
     "header": "About me",
-    "text": "I am a frontend web developer with a true passion for creating web applications. For me, it’s not just about writing code or using the latest technologies – it’s about finding solutions that are well thought out and user-friendly. It’s important to me to build applications that provide real value to users and remain maintainable even years down the line. I follow current best practices and write clean, structured code.",
+    "text": "I am a fullstack developer building web applications and native apps – from the interface through the API to the database. For almost a year I have been maintaining Pulsify with its native app, dashboard and Hono backend. Alongside that I am building my own products under the byButterfly brand, from product analysis to the finished app. What counts for me is not the latest technology but the solution behind it: well thought out, user-friendly and still maintainable years later. That is how products are built that are a win for both sides: real value for the users, measurable benefit for the company.",
     "collaborate": "I look forward to creating something great together!",
     "button": "Let's talk"
   },
@@ -240,8 +241,8 @@
   "meta": {
     "title": "Joachim Pürcher – Frontend Developer from Linz, Austria | Portfolio",
     "description": "Portfolio of Joachim Pürcher, frontend developer based in Wilhering near Linz, Austria. React, Next.js, TypeScript and Angular: projects, skills and contact.",
-    "jobTitle": "Frontend Developer",
-    "heroHeading": "Joachim Pürcher – Frontend Developer",
+    "jobTitle": "Fullstack Developer",
+    "heroHeading": "Joachim Pürcher – Fullstack Developer",
     "imprintTitle": "Legal notice",
     "imprintDescription": "Legal notice and provider information for the website of Joachim Pürcher, frontend developer near Linz, Austria.",
     "dataSaveTitle": "Privacy policy",

@@ -6,13 +6,13 @@ import styles from "./AboutMe.module.css";
 
 const PAPERS = [
   { paper: "/images/about-me/Ripped-paper-yellow.png", paperAlt: "yellow paper background", icon: "/images/about-me/location-icon.png", iconAlt: "loaction logo", key: "basedIn" },
-  { paper: "/images/about-me/Ripped-paper-blue.png", paperAlt: "blue paper background", icon: "/images/about-me/relocate-icon.png", iconAlt: "relocate logo", key: "relocate" },
+  { paper: "/images/about-me/Ripped-paper-blue.png", paperAlt: "blue paper background", icon: "/images/about-me/relocate-icon.png", iconAlt: "availability logo", key: "availableFrom" },
   { paper: "/images/about-me/Ripped-paper-orange.png", paperAlt: "orange paper background", icon: "/images/about-me/remote-icon.png", iconAlt: "remote logo", key: "remote" },
 ] as const;
 
 /**
  * Angular: main/about-me.
- * Three stacked ripped-paper notes (location, relocation, remote) and the about text.
+ * Three stacked ripped-paper notes (location, availability, remote) and the about text.
  * Fix: Angular had the typo `data-aoss`, so this section never animated; now `data-aos`.
  */
 export default function AboutMe({ id }: { id?: string }) {
