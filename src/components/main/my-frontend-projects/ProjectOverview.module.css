@@ -47,6 +47,12 @@
   animation: animate-hover-effect 400ms forwards;
 }
 
+/* Wide screenshots (e.g. 16:9) would otherwise take their intrinsic width at 400px height
+   and get clipped on the right; filling the wrapper lets object-fit crop from the center. */
+.imgWrapper > .hoverEffectNotAnimate {
+  width: 100%;
+}
+
 .imgWrapper::before {
   content: "";
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
