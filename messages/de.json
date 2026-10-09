@@ -91,14 +91,14 @@
         "durHeader": "Dauer",
         "durTime": "In ständiger Weiterentwicklung"
       },
-      "schoolInfos": {
-        "header": "Schoolinfos",
+      "coderr": {
+        "header": "Coderr",
         "descHeader": "Beschreibung",
-        "descText": "Eine Informationsseite für die Eltern unserer Schulkinder. Alle Informationen, Termine, Ferien und Tage der offenen Tür der Mittelschulen auf einer Seite. Sie wurde entwickelt, um ein kleines Problem zu lösen, das einige Eltern beschäftigte.",
+        "descText": "Full-Stack-Plattform für IT-Dienstleistungen. Business-Nutzer veröffentlichen Angebote mit drei Paketen, Kunden bestellen sie und bewerten anschließend den Anbieter. Die REST-API dahinter habe ich gebaut, das Frontend war als Vorgabe der Developer Akademie gegeben. Gehostet auf meinem eigenen netcup Server.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Abschnitt für Abschnitt mit grundlegenden React-Komponenten erstellt, ohne weitere Bibliotheken oder Imports. Einfach und sauber.",
+        "implementText": "Django REST Framework API nach einer vorgegebenen Spezifikation. Token-Authentifizierung mit Registrierung und Login. Zwei Rollen (Business und Kunde) mit Objektberechtigungen für Besitzer, Anbieter und Staff. Verschachtelte Serializer für Angebote und ihre Pakete, Bestellungen, die die Angebotskonditionen kopieren, Bewertungen einmal pro Anbieter. Filtern, Suchen, Sortieren und Pagination. Rate Limiting pro Endpunkt. Integrationstests für den Happy Path und die Fälle 400, 401, 403 und 404. Deployment als Docker-Container mit gunicorn hinter nginx auf einem selbst eingerichteten Linux vServer.",
         "durHeader": "Dauer",
-        "durTime": "Eine Woche"
+        "durTime": "Neun Wochen"
       }
     }
   },

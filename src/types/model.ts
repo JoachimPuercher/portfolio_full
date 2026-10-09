@@ -17,7 +17,7 @@ export interface TechLogo {
 }
 
 /** i18n key under `projects.projectDetails.*` */
-export type ProjectKey = "join" | "elpolloloco" | "simplify" | "schoolInfos";
+export type ProjectKey = "join" | "elpolloloco" | "simplify" | "coderr";
 
 export interface ProjectInfo {
   /** URL segment: /[locale]/projects/[slug] */

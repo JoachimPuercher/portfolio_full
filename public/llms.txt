@@ -12,7 +12,7 @@
 - [Join](https://www.puercherjoachim.com/en/projects/join): Kanban-style task management app (HTML, CSS, JavaScript, Firebase)
 - [El Pollo Loco](https://www.puercherjoachim.com/en/projects/el-pollo-loco): object-oriented browser jump-and-run game (HTML, CSS, JavaScript)
 - [Simplify this life](https://www.puercherjoachim.com/en/projects/simplify): mobile-first organisation app (React, Next.js, TypeScript, Tailwind CSS, Firebase)
-- [Schoolinfos](https://www.puercherjoachim.com/en/projects/school-infos): information site for parents about secondary schools (React, TypeScript)
+- [Coderr](https://www.puercherjoachim.com/en/projects/coderr): full stack service platform, REST API built by me (Python, Django, Django REST Framework, Docker, Linux)
 
 ## Contact and profiles
 

@@ -1,10 +1,10 @@
 import type { ProjectInfo, TechLogo } from "@/types/model";
-import { FRONTEND_TECH_LOGOS } from "./tech-logos";
+import { ALL_TECH_LOGOS } from "./tech-logos";
 
 /**
  * Ported from ProjectDetailsService (Angular).
  * The mutable `projectPos` state is gone: the active project is the URL slug.
- * Order equals the Angular `projectArr` order (join, elpolloloco, simplify, schoolInfos).
+ * Order equals the Angular `projectArr` order (join, elpolloloco, simplify); coderr replaced schoolInfos.
  */
 export const PROJECTS: ProjectInfo[] = [
   {
@@ -44,15 +44,15 @@ export const PROJECTS: ProjectInfo[] = [
     overviewAnimate: false,
   },
   {
-    slug: "school-infos",
-    key: "schoolInfos",
-    img: "/images/projects/project-details/schoolinfos/school-infos-details.webp",
+    slug: "coderr",
+    key: "coderr",
+    img: "/images/projects/project-details/coderr/coderr.webp",
     sticker: "/images/projects/project-details/Sticker.png",
-    usedTechs: ["html", "scss", "typescript", "react", "vite"],
-    gitButtonLink: "https://github.com/JoachimPuercher/school_open_house",
-    liveTestLink: "https://www.puercherjoachim.com/schoolinfos/",
-    overviewImg: "/images/projects/school-infos.webp",
-    overviewImgAlt: "school infos image",
+    usedTechs: ["python", "django", "drf", "rest-api", "docker", "linux", "javascript", "html", "css"],
+    gitButtonLink: "https://github.com/JoachimPuercher/coderr_backend",
+    liveTestLink: "https://www.puercherjoachim.com/coderr/",
+    overviewImg: "/images/projects/project-details/coderr/coderr3.webp",
+    overviewImgAlt: "coderr landing page",
     overviewAnimate: false,
   },
 ];
@@ -80,9 +80,9 @@ export function getPrevProject(slug: string): ProjectInfo {
 }
 
 /**
- * Angular getTechLogos(): keeps TECH_LOGOS order, filters by lower-cased name.
- * "vite" has no logo in TECH_LOGOS and is therefore dropped, same as in Angular.
+ * Angular getTechLogos(): keeps the skill grid order (frontend, then backend) and
+ * filters by lower-cased name. A tech without a logo is dropped, same as in Angular.
  */
 export function getTechLogos(project: ProjectInfo): TechLogo[] {
-  return FRONTEND_TECH_LOGOS.filter((logo) => project.usedTechs.includes(logo.name.toLocaleLowerCase()));
+  return ALL_TECH_LOGOS.filter((logo) => project.usedTechs.includes(logo.name.toLocaleLowerCase()));
 }

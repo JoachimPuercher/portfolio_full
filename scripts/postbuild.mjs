@@ -25,7 +25,7 @@ const REQUIRED = [
     `${l}/projects/join/index.html`,
     `${l}/projects/el-pollo-loco/index.html`,
     `${l}/projects/simplify/index.html`,
-    `${l}/projects/school-infos/index.html`,
+    `${l}/projects/coderr/index.html`,
   ]),
 ];
 const FORBIDDEN_DIRS = ["api", "proxy", "server"];

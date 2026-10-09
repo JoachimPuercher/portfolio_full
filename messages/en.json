@@ -90,14 +90,14 @@
         "durHeader": "Duration",
         "durTime": "In continuous development"
       },
-      "schoolInfos": {
-        "header": "School Infos",
+      "coderr": {
+        "header": "Coderr",
         "descHeader": "Description",
-        "descText": "An information page for the parents of our school kids. All informations, appointments, holidays and open house from the middleschools on one page. It was built to solve a small issue some parents had.",
+        "descText": "Full stack platform for IT services. Business users publish offers with three packages, customers order them and rate the provider afterwards. I built the REST API behind it, the frontend was given as a specification by the Developer Akademie. Hosted on my own netcup server.",
         "implementHeader": "Implementation Details",
-        "implementText": "Created section by section with React components basic and vite, no other libraries or imports. Just clean",
+        "implementText": "Django REST Framework API against a given specification. Token authentication with registration and login. Two roles (business and customer) with object level permissions for owner, provider and staff. Nested serializers for offers and their packages, orders that copy the offer conditions, reviews once per provider. Filtering, search, ordering and pagination. Rate limiting per endpoint. Integration tests for the happy path and the 400, 401, 403 and 404 cases. Deployed as a Docker container with gunicorn behind nginx on a Linux vServer that I set up myself.",
         "durHeader": "Duration",
-        "durTime": "One Week"
+        "durTime": "Nine Weeks"
       }
     }
   },
