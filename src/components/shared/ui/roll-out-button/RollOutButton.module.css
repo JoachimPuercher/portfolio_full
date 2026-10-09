@@ -29,6 +29,14 @@
 .heroButton:hover {
   cursor: var(--cursor-default);
 }
+/* Phones: the pill only rolls out to 175px (see HeroSection.module.css), so the
+   hover name needs a smaller type size to stay inside it. */
+@media (max-width: 550px) {
+  .heroButton {
+    font-size: 12px;
+    height: 36px;
+  }
+}
 
 .linkButton {
   border: none;

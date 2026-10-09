@@ -25,7 +25,7 @@ function ProfilePicture({ className }: { className: string }) {
       onMouseLeave={() => setProfilHovered(false)}
       className={cn(styles.picWrapper, className)}
     >
-      <img src="/images/hero-section/pic-hero.png" alt="profil picture" fetchPriority="high" />
+      <img className={styles.heroimage} src="/images/hero-section/pic-hero.jpg" alt="profil picture" fetchPriority="high" />
       <span>
         Joachim <span>{profilHovered ? ":D" : ":)"}</span>
       </span>
@@ -68,15 +68,19 @@ export default function HeroSection({ id }: HeroSectionProps) {
 
         <div className={styles.mainWrapper}>
           <div className={styles.rollOutWrapper}>
-            <RollOutButton
-              textNormal={t("hello")}
-              textHover={t("helloHover")}
-              imgPath="/images/hero-section/waving_hand.svg"
-              linkHref="about-me-section"
-              buttonType="hero"
-              animateType="hero"
-              externalLink={false}
-            />
+            <div className={styles.helloGroup}>
+              <RollOutButton
+                textNormal={t("hello")}
+                textHover={t("helloHover")}
+                imgPath="/images/hero-section/waving_hand.svg"
+                linkHref="about-me-section"
+                buttonType="hero"
+                animateType="hero"
+                externalLink={false}
+              />
+            </div>
+            {/* Below 550px the picture moves up here, opposite the hello button. */}
+            <ProfilePicture className="display-flex-mobile550-width" />
           </div>
 
           <div className={styles.mainTextWrapper} aria-hidden="true" data-nosnippet>
@@ -100,7 +104,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
                   />
                 ))}
               </div>
-              <ProfilePicture className="display-hide-550-width" />
+              <ProfilePicture className="display-hide-550-width scale-y-[0.95]" />
             </div>
 
             <div className={styles.devWrapper} onMouseLeave={() => setDevLetterHovered(null)}>
@@ -119,8 +123,6 @@ export default function HeroSection({ id }: HeroSectionProps) {
             {t("touch")}
           </MainButton>
         </div>
-
-        <ProfilePicture className="display-flex-mobile550-width" />
 
         <div className={styles.socialLinks}>
           {SOCIAL_LINKS.map((link) => (

@@ -16,6 +16,10 @@
   height: 100dvh;
 }
 
+.heroimage {
+  transform: scale(0.95);
+}
+
 .headerWrapper {
   padding: 0 160px;
 }
@@ -90,6 +94,48 @@
 
 .rollOutWrapper {
   align-self: flex-start;
+}
+
+/* Hand icon and button belong together: the icon is right-aligned inside this group,
+   not inside the full-width row. */
+.helloGroup {
+  width: fit-content;
+}
+/* ------------------------------------------------------------------ */
+/* Phones (<= 550px): the picture sits in the top right, the hello      */
+/* button to its left. The picture is taken out of the flow so the      */
+/* button's roll-out can never push it off screen, and the roll-out is  */
+/* capped at 175px through the two animation variables below.           */
+/* ------------------------------------------------------------------ */
+@media (max-width: 550px) {
+  .rollOutWrapper {
+    --animate-bounce-in: bounce-animation-phone 1s ease forwards;
+    --animate-bounce-back: bounce-back-animation-phone 1s ease forwards;
+    align-self: stretch;
+    position: relative;
+    /* Room for the absolutely placed picture, nothing more. */
+    min-height: 140px;
+  }
+  /* Rest width of the pill: the hand icon then sits above it instead of next to the
+     picture. The roll-out to 175px simply overflows this box. */
+  .helloGroup {
+    width: 140px;
+  }
+  .rollOutWrapper .picWrapper {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 108px;
+    height: 130px;
+    padding: 5px 5px 3px;
+    font-size: 13px;
+    transform: rotate(8deg);
+  }
+  .rollOutWrapper .picWrapper > img {
+    width: 94px;
+    height: 94px;
+    margin-bottom: 3px;
+  }
 }
 
 .mainTextWrapper {
@@ -372,5 +418,34 @@
     color: var(--color-main-yellow);
     transform: scale(1) translate(-50%, -50%);
     opacity: 1;
+  }
+}
+
+/* Phones: no fixed 45dvh block with a dead lower half - the three blocks
+   (hello row, letters, contact button) share the space evenly. */
+@media (max-width: 550px) {
+  .mainWrapper {
+    height: auto;
+    min-height: 0;
+    margin: 2dvh auto 0;
+    justify-content: flex-start;
+    gap: 28px;
+    /* Optically centred: the rotated picture adds weight on the right, so the whole
+       block is nudged a few pixels to the left. */
+    transform: translateX(-6px);
+  }
+  /* Centre the letter rows and the contact button instead of pinning them to the edges. */
+  .frontendWrapper {
+    margin-right: 0;
+    justify-content: center;
+  }
+  .devWrapper {
+    margin: 0 auto;
+  }
+  .mainWrapper > :last-child {
+    margin: 0 auto;
+  }
+  .mainTextWrapper {
+    margin: 0;
   }
 }

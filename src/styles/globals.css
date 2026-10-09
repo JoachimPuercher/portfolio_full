@@ -442,6 +442,38 @@
   }
 }
 
+/* Phone variant of the hero button: the 275px roll-out would push the hero polaroid
+   off a 320px screen, so it stops at 175px (see HeroSection.module.css). */
+@keyframes bounce-animation-phone {
+  0% {
+    width: 140px;
+  }
+  50% {
+    width: 180px;
+  }
+  85% {
+    width: 172px;
+  }
+  100% {
+    width: 175px;
+  }
+}
+
+@keyframes bounce-back-animation-phone {
+  0% {
+    width: 175px;
+  }
+  50% {
+    width: 132px;
+  }
+  85% {
+    width: 145px;
+  }
+  100% {
+    width: 140px;
+  }
+}
+
 @keyframes bounce-animation-footer-link {
   0%,
   100% {
