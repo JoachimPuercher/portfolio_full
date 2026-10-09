@@ -33,7 +33,7 @@ export default function MyLogo({ href = "/", onLogoClick }: MyLogoProps) {
       <Link
         href={href}
         aria-label="Joachim Pürcher – Home"
-        className="group/logo block h-full w-[60px] mw-850:w-[50px]"
+        className="group/logo block h-full w-[52px] mw-850:w-[50px]"
       >
         <LogoSvg
           className="block h-auto w-full"
