@@ -12,10 +12,10 @@ export const SKIP_INTRO_KEY = "skipHeroIntro";
  * Hero letter state and intro wave (Angular HeroSectionComponent).
  *
  * The wave walks the "Frontend" letters left to right while walking the
- * "Developer"/"Entwickler" letters right to left, one step every 350 ms, then
- * flashes all letters for 500 ms. Angular hard-coded the start indexes per language
- * (en: -2 / 8, de: -3 / 9); they are derived from the letter counts here, which gives
- * the same values.
+ * "Developer"/"Entwickler" letters right to left, one step every 350 ms, and ends
+ * there. (Angular flashed all letters afterwards; that blink is gone, the logo click
+ * still triggers it through startAnimation.) The start indexes are derived from the
+ * letter counts, as Angular hard-coded them per language.
  *
  * First visit in a session: runs after window "load". Later visits (session flag set):
  * runs right away. Skipped for prefers-reduced-motion.
@@ -51,10 +51,9 @@ export function useHeroIntroAnimation(frontLength: number, devLength: number) {
         intervalRef.current = null;
         setFrontLetterHovered(null);
         setDevLetterHovered(null);
-        startAnimation();
       }
     }, TICK_MS);
-  }, [frontLength, devLength, startAnimation]);
+  }, [frontLength, devLength]);
 
   useEffect(() => {
     const timeouts = timeoutsRef.current;
