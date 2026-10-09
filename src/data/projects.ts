@@ -4,9 +4,21 @@ import { ALL_TECH_LOGOS } from "./tech-logos";
 /**
  * Ported from ProjectDetailsService (Angular).
  * The mutable `projectPos` state is gone: the active project is the URL slug.
- * Order equals the Angular `projectArr` order (join, elpolloloco); videoflix and coderr replaced simplify and schoolInfos.
+ * Pulsify leads; then the Angular `projectArr` order (join, elpolloloco); videoflix and coderr
+ * replaced simplify and schoolInfos. The first project gets the "featured" sticker.
  */
 export const PROJECTS: ProjectInfo[] = [
+  {
+    slug: "pulsify",
+    key: "pulsify",
+    img: "/images/projects/project-details/pulsify/pulsify3.webp",
+    sticker: "/images/projects/project-details/Sticker.png",
+    usedTechs: ["typescript", "react/native", "next", "tailwind", "hono", "supabase", "postgresql", "railway", "vercel"],
+    liveTestLink: "https://pulsify-app.com/",
+    overviewImg: "/images/projects/project-details/pulsify/pulsify.webp",
+    overviewImgAlt: "pulsify landing page",
+    overviewAnimate: false,
+  },
   {
     slug: "join",
     key: "join",

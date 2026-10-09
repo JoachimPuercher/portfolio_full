@@ -9,6 +9,7 @@
 
 ## Projects
 
+- [Pulsify](https://www.puercherjoachim.com/en/projects/pulsify): planning app for events and places in Austria with AI, web app, iOS/Android app and business dashboard, startup monorepo I contribute to (TypeScript, React Native, Next.js, Hono, Supabase)
 - [Join](https://www.puercherjoachim.com/en/projects/join): Kanban-style task management app (HTML, CSS, JavaScript, Firebase)
 - [El Pollo Loco](https://www.puercherjoachim.com/en/projects/el-pollo-loco): object-oriented browser jump-and-run game (HTML, CSS, JavaScript)
 - [Videoflix](https://www.puercherjoachim.com/en/projects/videoflix): video streaming backend with JWT auth and HLS transcoding, REST API built by me (Python, Django, Django REST Framework, PostgreSQL, Redis, Docker)

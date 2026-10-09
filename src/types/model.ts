@@ -17,7 +17,7 @@ export interface TechLogo {
 }
 
 /** i18n key under `projects.projectDetails.*` */
-export type ProjectKey = "join" | "elpolloloco" | "videoflix" | "coderr";
+export type ProjectKey = "pulsify" | "join" | "elpolloloco" | "videoflix" | "coderr";
 
 export interface ProjectInfo {
   /** URL segment: /[locale]/projects/[slug] */
@@ -27,13 +27,14 @@ export interface ProjectInfo {
   img: string;
   sticker: string;
   usedTechs: string[];
-  gitButtonLink: string;
+  /** Optional: a project with a private repository shows no "Git Hub" button */
+  gitButtonLink?: string;
   /** Optional: a project without a deployment shows no "Live Test" button */
   liveTestLink?: string;
   /** Overview card image (my-frontend-projects section) */
   overviewImg: string;
   overviewImgAlt: string;
-  /** Only the first project animates its overview image */
+  /** Only Join animates its overview image (floating laptop) */
   overviewAnimate: boolean;
 }
 

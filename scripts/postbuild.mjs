@@ -22,6 +22,7 @@ const REQUIRED = [
     `${l}/index.html`,
     `${l}/imprint/index.html`,
     `${l}/data-save/index.html`,
+    `${l}/projects/pulsify/index.html`,
     `${l}/projects/join/index.html`,
     `${l}/projects/el-pollo-loco/index.html`,
     `${l}/projects/videoflix/index.html`,

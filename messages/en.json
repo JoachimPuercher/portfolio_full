@@ -59,6 +59,15 @@
     "projectDetails": {
       "backButton": "Go Back",
       "nextButton": "Next Project",
+      "pulsify": {
+        "header": "Pulsify",
+        "descHeader": "Description",
+        "descText": "Planning app for going out: events and places in Austria's cities. One sentence is enough, Pulsify AI turns it into a plan with its own chat and keeps everyone on track. Web app, iOS and Android app and a business dashboard for venues and organizers. Startup project, I work on the whole monorepo and support the team wherever I can. Full stack, live to test.",
+        "implementHeader": "Implementation Details",
+        "implementText": "Turborepo monorepo with pnpm. Expo app with expo-router, NativeWind and TanStack Query. Public Next.js website with next-intl and MapLibre. Vite business dashboard with TanStack Router, Radix and Tailwind 4. Bun and Hono backend with zod-openapi and Drizzle. Supabase for auth, Postgres, storage and realtime. Shared DTOs, enums and validation in one package, typed Hono RPC from the backend into both frontends, so a contract change breaks the consumer at compile time. Deployment on Railway (backend), Vercel (web, dashboard) and EAS (app). Biome, husky, knip and Conventional Commits in CI.",
+        "durHeader": "Duration",
+        "durTime": "Since May 2026, ongoing"
+      },
       "join": {
         "header": "Join",
         "descHeader": "Description",

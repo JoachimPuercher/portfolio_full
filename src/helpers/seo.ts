@@ -119,7 +119,7 @@ export function projectJsonLd(project: ProjectInfo, locale: Locale, name: string
     name,
     description,
     url: localizedUrl(locale, `/projects/${project.slug}`),
-    codeRepository: project.gitButtonLink,
+    ...(project.gitButtonLink && { codeRepository: project.gitButtonLink }),
     ...(project.liveTestLink && {
       targetProduct: { "@type": "WebApplication", name, url: project.liveTestLink, applicationCategory: "WebApplication", operatingSystem: "Web" },
     }),

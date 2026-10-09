@@ -6,8 +6,8 @@ import ProjectLinkButton from "@/components/shared/ui/project-link-button/Projec
 import ProjectOverview from "./ProjectOverview";
 import styles from "./MyFrontendProjects.module.css";
 
-/** Angular AOS direction per project card (join, el pollo loco, videoflix, coderr). */
-const AOS_DIRECTION = ["fade-right", "fade-left", "fade-right", "fade-right"] as const;
+/** AOS direction per project card: left column fades in from the right, right column from the left. */
+const AOS_DIRECTION = ["fade-right", "fade-left", "fade-right", "fade-left", "fade-right"] as const;
 
 /**
  * Angular: main/my-projects (renamed to my-frontend-projects).
