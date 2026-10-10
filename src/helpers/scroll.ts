@@ -7,7 +7,32 @@
  * MainComponent.jumpToSection, ProjectDetailComponent.ngAfterViewInit).
  */
 export function scrollToSection(id: string, block: ScrollLogicalPosition = "start") {
-  document.getElementById(id)?.scrollIntoView({ block, behavior: "smooth" });
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ block, behavior: "smooth" });
+  keepAligned(el, block);
+}
+
+/**
+ * Lazy-loaded images below the fold grow the document while a smooth scroll runs, and
+ * `scrollIntoView` resolves its target only once: the longer the way, the further the
+ * page lands above the section (the contact link missed it by 1000px on a phone).
+ * Re-aim whenever the document height changes, until it settles.
+ */
+export function keepAligned(el: Element, block: ScrollLogicalPosition = "start", timeoutMs = 3000) {
+  let lastHeight = document.documentElement.scrollHeight;
+  const started = Date.now();
+
+  const tick = () => {
+    const height = document.documentElement.scrollHeight;
+    if (height !== lastHeight) {
+      lastHeight = height;
+      el.scrollIntoView({ block, behavior: "smooth" });
+    }
+    if (Date.now() - started < timeoutMs) window.setTimeout(tick, 150);
+  };
+
+  window.setTimeout(tick, 150);
 }
 
 export function scrollToTop() {

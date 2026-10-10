@@ -9,6 +9,7 @@ import SkillSet from "@/components/main/skill-set/SkillSet";
 import MyFrontendProjects from "@/components/main/my-frontend-projects/MyFrontendProjects";
 import ColleaguesThoughts from "@/components/main/colleagues-thoughts/ColleaguesThoughts";
 import ContactMe from "@/components/main/contact-me/ContactMe";
+import HashScroll from "@/components/providers/HashScroll";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
   const locale = asLocale((await params).locale);
@@ -22,6 +23,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <main>
+      <HashScroll />
       <HeroSection id={SECTION_IDS.hero} />
       <AboutMe id={SECTION_IDS.aboutMe} />
       <SkillSet id={SECTION_IDS.skills} />
