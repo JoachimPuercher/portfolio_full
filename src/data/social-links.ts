@@ -24,7 +24,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 /** LinkedIn profiles of colleagues (ColleaguesThoughtsComponent.stickerLinks). */
 export const STICKER_LINKS = {
-  dominic: "https://www.linkedin.com/in/dominic-duchaczek-397b641b6/",
+  dominic: "https://www.linkedin.com/in/dominic-schaller-397b641b6/",
   eduard: "https://www.linkedin.com/in/eduard-fray-696ba81a9/",
 } as const;
 
