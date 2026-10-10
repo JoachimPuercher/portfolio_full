@@ -88,16 +88,17 @@
 .checkboxWrapper > input[type="checkbox"]:hover {
   background-color: #3355ff6c;
 }
-.checkboxWrapper > input[type="checkbox"]:checked::after {
-  content: url("/images/contact-me/check.webp");
-  position: absolute;
-  top: 6px;
-  min-width: 18px;
-  min-height: 18px;
-  max-width: 18px;
-  max-height: 18px;
-  color: var(--color-main-yellow);
-  font-size: 20px;
+/*
+ * The tick is painted into the box itself. It used to be an absolutely positioned
+ * ::after, but its containing block was .checkboxWrapper, so it was pinned 6px below
+ * the wrapper top: as soon as the privacy text wrapped to one more line (phones), the
+ * input moved down and the tick stayed above it, outside the box.
+ */
+.checkboxWrapper > input[type="checkbox"]:checked {
+  background-image: url("/images/contact-me/check.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
 }
 
 .privacyLink {
