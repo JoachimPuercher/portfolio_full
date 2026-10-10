@@ -9,6 +9,54 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.puerch
 export const SITE_NAME = "Joachim Pürcher";
 
 const OG_LOCALE: Record<Locale, string> = { de: "de_AT", en: "en_US" };
+/** Alt text of the static OG image (matches the text rendered by scripts/generate-og.mjs). */
+const OG_ALT: Record<Locale, string> = {
+  de: `${SITE_NAME} – Softwareentwickler für Apps, Web-Apps und Websites in Linz`,
+  en: `${SITE_NAME} – Software developer for apps, web apps and websites in Linz, Austria`,
+};
+
+export const CONTACT = {
+  email: "contact@puercherjoachim.com",
+  telephone: "+43 676 770 41 99",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Schöneringer Straße 12e",
+    addressLocality: "Wilhering",
+    addressRegion: "Oberösterreich",
+    postalCode: "4073",
+    addressCountry: "AT",
+  },
+} as const;
+
+/** Places the service is offered in (local SEO): home region first, then remote. */
+const AREA_SERVED = [
+  { "@type": "City", name: "Linz" },
+  { "@type": "City", name: "Wels" },
+  { "@type": "City", name: "Steyr" },
+  { "@type": "City", name: "Wilhering" },
+  { "@type": "City", name: "Leonding" },
+  { "@type": "State", name: "Oberösterreich" },
+  { "@type": "Country", name: "Österreich" },
+  { "@type": "Country", name: "Deutschland" },
+  { "@type": "Country", name: "Schweiz" },
+];
+
+/** Service and domain terms the entity should be associated with, beyond the tech logos. */
+const KNOWS_ABOUT_EXTRA = [
+  "Native App-Entwicklung",
+  "Web-App-Entwicklung",
+  "Website-Erstellung",
+  "Backend- und API-Entwicklung",
+  "Mobile app development",
+  "Web application development",
+  "React Native",
+  "Expo",
+  "Next.js",
+  "Hono",
+  "Django REST Framework",
+  "UX / Benutzerfreundlichkeit",
+  "Kostenrealistische Softwareentwicklung",
+];
 
 /**
  * Absolute URL for a locale and a locale-less path ("" | "/imprint" | "/projects/join").
@@ -48,7 +96,7 @@ interface PageMetaInput {
  */
 export function buildPageMetadata({ locale, path, title, description, absoluteTitle, noIndex }: PageMetaInput): Metadata {
   const url = localizedUrl(locale, path);
-  const image = { url: ogImageUrl(locale), width: 1200, height: 630, alt: `${SITE_NAME} – Frontend Developer` };
+  const image = { url: ogImageUrl(locale), width: 1200, height: 630, alt: OG_ALT[locale] };
   return {
     ...(title ? { title: absoluteTitle ? { absolute: title } : title } : {}),
     description,
@@ -81,21 +129,62 @@ export function personJsonLd(locale: Locale, jobTitle: string, description: stri
     givenName: "Joachim",
     familyName: "Pürcher",
     url: localizedUrl(locale),
-    image: `${SITE_URL}/images/hero-section/pic-hero.png`,
+    image: `${SITE_URL}/images/hero-section/pic-hero.jpg`,
     jobTitle,
     description,
-    email: "mailto:contact@puercherjoachim.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Wilhering",
-      addressRegion: "Oberösterreich",
-      postalCode: "4073",
-      addressCountry: "AT",
+    email: `mailto:${CONTACT.email}`,
+    telephone: CONTACT.telephone,
+    address: CONTACT.address,
+    homeLocation: { "@type": "Place", name: "Wilhering bei Linz, Oberösterreich, Austria" },
+    workLocation: { "@type": "Place", name: "Linz, Oberösterreich, Austria" },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: jobTitle,
+      occupationLocation: { "@type": "City", name: "Linz" },
     },
-    homeLocation: { "@type": "Place", name: "Linz, Austria" },
-    knowsAbout: ALL_TECH_LOGOS.map((t) => t.name),
+    worksFor: { "@id": `${SITE_URL}/#business` },
+    knowsAbout: [...ALL_TECH_LOGOS.map((t) => t.name), ...KNOWS_ABOUT_EXTRA],
     knowsLanguage: ["de", "en"],
     sameAs: [PROFILE_URLS.linkedin, PROFILE_URLS.github],
+  };
+}
+
+/**
+ * The one-person business as a local service entity (local SEO: "App Entwickler Linz").
+ * Linked to the Person via worksFor/founder, services as an OfferCatalog.
+ */
+export function professionalServiceJsonLd(locale: Locale, name: string, description: string, services: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${SITE_URL}/#business`,
+    name,
+    description,
+    url: localizedUrl(locale),
+    image: ogImageUrl(locale),
+    logo: `${SITE_URL}/images/meinlogo.svg`,
+    email: CONTACT.email,
+    telephone: CONTACT.telephone,
+    address: CONTACT.address,
+    areaServed: AREA_SERVED,
+    founder: { "@id": `${SITE_URL}/#person` },
+    employee: { "@id": `${SITE_URL}/#person` },
+    knowsLanguage: ["de", "en"],
+    availableLanguage: ["German", "English"],
+    sameAs: [PROFILE_URLS.linkedin, PROFILE_URLS.github],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name,
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service,
+          provider: { "@id": `${SITE_URL}/#person` },
+          areaServed: AREA_SERVED,
+        },
+      })),
+    },
   };
 }
 

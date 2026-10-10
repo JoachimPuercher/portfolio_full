@@ -40,7 +40,7 @@
     "remote": "Open to work remote",
     "who": "WHO'S JOACHIM",
     "header": "About me",
-    "text": "I am a fullstack developer building web applications and native apps – from the interface through the API to the database. For almost a year I have been maintaining Pulsify with its native app, dashboard and Hono backend. Alongside that I am building my own products under the byButterfly brand, from product analysis to the finished app. Before that, nine years in specialist retail with daily customer contact: I know how people search, what they really need and where they get stuck – and that goes into every interface and API I build. What counts for me is not the latest technology but the solution behind it: well thought out, user-friendly and still maintainable years later. That is how products are built that are a win for both sides: real value for the users, measurable benefit for the company.",
+    "text": "I am a fullstack developer from Wilhering near Linz, building native apps, web apps and websites – from the interface through the API to the database, for companies in Upper Austria and remotely. At Pulsify I maintain the native app, the dashboard and the Hono backend. Alongside that I am building my own products under the byButterfly brand, from product analysis to the finished app. Before that, nine years in specialist retail with daily customer contact: I know how people search, what they really need and where they get stuck – and that goes into every interface and API I build. What counts for me is not the latest technology but the solution behind it: well thought out, user-friendly and still maintainable years later. I calculate costs realistically: it is not the cheapest developer hour that sets the price, but what gets done in that hour. That is how products are built that are a win for both sides: real value for the users, measurable benefit for the company.",
     "collaborate": "I look forward to creating something great together!",
     "button": "Let's talk"
   },
@@ -49,12 +49,12 @@
     "frontend": "Frontend",
     "backend": "Backend",
     "header": "Skill Set",
-    "introduction": "Across many completed projects I have acquired a wide range of skills. I keep expanding them continuously to keep up with the latest requirements."
+    "introduction": "Expertise from many completed projects, practical knowledge from everyday work with real users. I keep developing this stack so that software stays affordable to build without cutting corners on quality."
   },
   "projects": {
     "craft": "MY CRAFT",
     "header": "Projects",
-    "text": "The following projects are an excerpt from my past work.",
+    "text": "An excerpt of my work: native apps, web apps, websites and backends, developed in Linz.",
     "buttonText": "Project details",
     "projectDetails": {
       "backButton": "Go Back",
@@ -134,7 +134,7 @@
   "contactMe": {
     "headerWords": "CONTACT ME",
     "header": "Ready to work together?",
-    "mainTextFirst": "I'm looking forward to getting to know you and finding the perfect solution to your problem together. You can use this form to send me a message. Just enter your name, your email address, and a brief description of your request. Hit send – and you're done!",
+    "mainTextFirst": "Looking for a local developer in Linz and the surrounding area, or remote across Austria? I'm looking forward to getting to know you and finding a solution that is a win for both sides – win-win, at realistic cost and with quality from the heart of Austria. You can use this form to send me a message. Just enter your name, your email address, and a brief description of your request. Hit send – and you're done!",
     "mainTextSecond": "Modern times call for modern solutions and timeless design. Let's get started!",
     "form": {
       "name": {
@@ -244,12 +244,22 @@
     "onlineLinksText": "All content is protected by copyright"
   },
   "meta": {
-    "title": "Joachim Pürcher – Frontend Developer from Linz, Austria | Portfolio",
-    "description": "Portfolio of Joachim Pürcher, frontend developer based in Wilhering near Linz, Austria. React, Next.js, TypeScript and Angular: projects, skills and contact.",
-    "jobTitle": "Fullstack Developer",
-    "heroHeading": "Joachim Pürcher – Fullstack Developer",
+    "title": "App & Web Developer in Linz, Austria | Joachim Pürcher",
+    "description": "Native apps, web apps and websites from Linz, Austria: realistic costs, hands-on expertise and quality from the heart of Austria by Joachim Pürcher.",
+    "jobTitle": "Software Developer",
+    "heroHeading": "Joachim Pürcher – Fullstack Developer for native apps, web apps and websites in Linz, Upper Austria",
+    "serviceName": "Joachim Pürcher – Software Development Linz",
+    "serviceDescription": "Development of native apps (iOS and Android), web apps and websites for companies in Linz, Upper Austria and all of Austria, remote across the DACH region as well. Realistic costing: what matters is not the cheapest developer hour but what gets done in that hour.",
+    "services": {
+      "nativeApps": "Native app development for iOS and Android",
+      "webApps": "Web app development",
+      "websites": "Website development",
+      "backend": "Backend and API development"
+    },
+    "ogTagline": "Native apps · Web apps · Websites",
+    "ogLocation": "Linz, Upper Austria · puercherjoachim.com",
     "imprintTitle": "Legal notice",
-    "imprintDescription": "Legal notice and provider information for the website of Joachim Pürcher, frontend developer near Linz, Austria.",
+    "imprintDescription": "Legal notice and provider information for the website of Joachim Pürcher, software developer in Wilhering near Linz, Upper Austria.",
     "dataSaveTitle": "Privacy policy",
     "dataSaveDescription": "Privacy policy of Joachim Pürcher's website: contact form, cookies, server log files and your rights.",
     "projectTitle": "{name} – Project",

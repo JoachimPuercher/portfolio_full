@@ -41,7 +41,7 @@
     "remote": "Offen für Homeoffice",
     "who": "WER IST JOACHIM",
     "header": "Über mich",
-    "text": "Ich bin Fullstack-Entwickler und entwickle Webanwendungen sowie native Apps – vom Interface über die API bis zur Datenbank. Seit knapp einem Jahr betreue ich Pulsify mit nativer App, Dashboard und Hono-Backend. Parallel baue ich unter der Marke byButterfly eigene Produkte auf, von der Produktanalyse bis zur fertigen App. Davor neun Jahre Fachhandel, täglich im direkten Kontakt mit Kunden: Ich weiß, wie Menschen suchen, was sie wirklich brauchen und woran sie scheitern – und genau das fließt in jedes Interface und jede API, die ich baue. Entscheidend ist dabei nicht die neueste Technologie, sondern die Lösung dahinter: durchdacht, benutzerfreundlich und auch nach Jahren wartbar. So entstehen Produkte, die für beide Seiten ein Gewinn sind: echter Mehrwert für die Nutzer, messbarer Nutzen für das Unternehmen.",
+    "text": "Ich bin Fullstack-Entwickler aus Wilhering bei Linz und entwickle native Apps, Web-Apps und Websites – vom Interface über die API bis zur Datenbank, für Unternehmen in Oberösterreich und remote. Bei Pulsify betreue ich die native App, das Dashboard und das Hono-Backend. Parallel baue ich unter der Marke byButterfly eigene Produkte auf, von der Produktanalyse bis zur fertigen App. Davor neun Jahre Fachhandel, täglich im direkten Kontakt mit Kunden: Ich weiß, wie Menschen suchen, was sie wirklich brauchen und woran sie scheitern – und genau das fließt in jedes Interface und jede API, die ich baue. Entscheidend ist dabei nicht die neueste Technologie, sondern die Lösung dahinter: durchdacht, benutzerfreundlich und auch nach Jahren wartbar. Ich kalkuliere kostenrealistisch: Nicht die günstigste Entwicklerstunde macht den Preis, sondern was in dieser Stunde geleistet wird. So entstehen Produkte, die für beide Seiten ein Gewinn sind: echter Mehrwert für die Nutzer, messbarer Nutzen für das Unternehmen.",
     "collaborate": "Ich freue mich darauf, gemeinsam etwas Großartiges zu schaffen!",
     "button": "Kontakt aufnehmen"
   },
@@ -50,12 +50,12 @@
     "frontend": "Frontend",
     "backend": "Backend",
     "header": "Skill Set",
-    "introduction": "Durch zahlreiche abgeschlossene Projekte konnte ich mir viele Fähigkeiten aneignen. Diese entwickle ich kontinuierlich weiter, um mit den neuesten Anforderungen Schritt zu halten."
+    "introduction": "Fachwissen aus vielen abgeschlossenen Projekten, Praxiswissen aus dem Alltag mit echten Nutzern. Diesen Stack entwickle ich laufend weiter – damit Software günstig entsteht, ohne an Qualität zu sparen."
   },
   "projects": {
     "craft": "MEINE",
     "header": "Projekte",
-    "text": "Hier finden Sie einen Auszug meiner vergangenen Arbeiten.",
+    "text": "Ein Auszug meiner Arbeiten: native Apps, Web-Apps, Websites und Backends, entwickelt in Linz.",
     "buttonText": "Projekt Details",
     "projectDetails": {
       "backButton": "Zurück",
@@ -135,7 +135,7 @@
   "contactMe": {
     "headerWords": "KONTAKTIERE MICH",
     "header": "Bereit, gemeinsam loszulegen?",
-    "mainTextFirst": "Ich freue mich darauf, dich kennenzulernen und gemeinsam mit dir eine perfekte Lösung für dein Problem zu finden. Über dieses Formular kannst du mir eine Nachricht zukommen lassen. Bitte trage deinen Namen, deine E-Mail-Adresse und kurz dein Anliegen ein. Abschicken – und fertig!",
+    "mainTextFirst": "Du suchst einen lokalen Entwickler in Linz und Umgebung oder remote in ganz Österreich? Ich freue mich darauf, dich kennenzulernen und gemeinsam eine Lösung zu finden, die für beide Seiten ein Gewinn ist – win-win, kostenrealistisch und mit Qualität aus dem Herzen Österreichs. Über dieses Formular kannst du mir eine Nachricht zukommen lassen. Bitte trage deinen Namen, deine E-Mail-Adresse und kurz dein Anliegen ein. Abschicken – und fertig!",
     "mainTextSecond": "Moderne Zeiten brauchen moderne Lösungen und zeitloses Design. Lass uns loslegen!",
     "form": {
       "name": {
@@ -245,12 +245,22 @@
     "onlineLinksText": "Alle Inhalte sind urheberrechtlich geschützt"
   },
   "meta": {
-    "title": "Joachim Pürcher – Frontend Entwickler aus Linz | Portfolio",
-    "description": "Portfolio von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz (Österreich). React, Next.js, TypeScript und Angular: Projekte, Skills und Kontakt.",
-    "jobTitle": "Fullstack Entwickler",
-    "heroHeading": "Joachim Pürcher – Fullstack Entwickler",
+    "title": "Softwareentwickler Linz – Apps, Web-Apps & Websites | Joachim Pürcher",
+    "description": "Native Apps, Web-Apps und Websites aus Linz: Joachim Pürcher entwickelt kostenrealistisch, mit Praxiswissen und Qualität aus dem Herzen Österreichs.",
+    "jobTitle": "Softwareentwickler",
+    "heroHeading": "Joachim Pürcher – Fullstack-Entwickler für native Apps, Web-Apps und Websites in Linz, Oberösterreich",
+    "serviceName": "Joachim Pürcher – Softwareentwicklung Linz",
+    "serviceDescription": "Entwicklung von nativen Apps (iOS und Android), Web-Apps und Websites für Unternehmen in Linz, Oberösterreich und ganz Österreich, auch remote im DACH-Raum. Kostenrealistisch kalkuliert: Entscheidend ist nicht die günstigste Entwicklerstunde, sondern was in dieser Stunde geleistet wird.",
+    "services": {
+      "nativeApps": "Native App-Entwicklung für iOS und Android",
+      "webApps": "Web-App-Entwicklung",
+      "websites": "Website-Erstellung",
+      "backend": "Backend- und API-Entwicklung"
+    },
+    "ogTagline": "Native Apps · Web-Apps · Websites",
+    "ogLocation": "Linz, Oberösterreich · puercherjoachim.com",
     "imprintTitle": "Impressum",
-    "imprintDescription": "Impressum und Angaben zum Diensteanbieter der Website von Joachim Pürcher, Frontend-Entwickler aus Wilhering bei Linz.",
+    "imprintDescription": "Impressum und Angaben zum Diensteanbieter der Website von Joachim Pürcher, Softwareentwickler aus Wilhering bei Linz, Oberösterreich.",
     "dataSaveTitle": "Datenschutzerklärung",
     "dataSaveDescription": "Datenschutzerklärung der Website von Joachim Pürcher: Kontaktformular, Cookies, Server-Logfiles und Ihre Rechte.",
     "projectTitle": "{name} – Projekt",

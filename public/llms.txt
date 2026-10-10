@@ -1,27 +1,46 @@
-# Joachim Pürcher – Frontend Developer Portfolio
+# Joachim Pürcher – Software developer for native apps, web apps and websites in Linz, Austria
 
-> Portfolio of Joachim Pürcher, a frontend developer based in Wilhering near Linz, Upper Austria. He builds web applications with React, Next.js, TypeScript, Angular, Tailwind CSS and Firebase. Open to relocation and remote work. The site is available in German (/de) and English (/en).
+> Joachim Pürcher is a fullstack software developer based in Wilhering near Linz, Upper Austria. He develops native apps (iOS and Android), web apps, websites and the backends/APIs behind them for companies in Linz, Upper Austria and all of Austria, and works remotely across the DACH region. Pricing is calculated realistically: not the cheapest developer hour sets the price, but what gets done in that hour. The goal of every project is a win-win: real value for the users, measurable benefit for the company. Quality from the heart of Austria. The site is available in German (/de) and English (/en).
+
+## Services
+
+- Native app development for iOS and Android (React Native / Expo, TypeScript)
+- Web app development (React, Next.js, TypeScript, Tailwind CSS)
+- Website development (Next.js static sites, SEO-first, fast and maintainable)
+- Backend and API development (Hono, Django REST Framework, PostgreSQL, Supabase, Docker)
+- Full stack delivery from product analysis to the finished, deployed app
+
+## Why clients work with him
+
+- Cost-realistic quotes: what counts is what gets delivered per hour, not the lowest hourly rate
+- Expertise plus practical knowledge: nine years in specialist retail with daily customer contact before software development, so interfaces are built for how people actually search and decide
+- Affordable software development without cutting corners on quality: thought-through solutions that stay maintainable for years
+- Local developer for Linz and the surrounding area (Wels, Steyr, Leonding, Wilhering, Upper Austria), remote across Austria, Germany and Switzerland
+- Speaks German and English
 
 ## Main pages
 
-- [Home (English)](https://www.puercherjoachim.com/en): about, skills, projects, testimonials and contact form
-- [Home (German)](https://www.puercherjoachim.com/de): about, skills, projects, testimonials and contact form
+- [Home (German)](https://www.puercherjoachim.com/de/): about, skills, projects, testimonials and contact form
+- [Home (English)](https://www.puercherjoachim.com/en/): about, skills, projects, testimonials and contact form
 
-## Projects
+## Projects and references
 
-- [Pulsify](https://www.puercherjoachim.com/en/projects/pulsify): planning app for events and places in Austria with AI, web app, iOS/Android app and business dashboard, startup monorepo I contribute to (TypeScript, React Native, Next.js, Hono, Supabase)
-- [Join](https://www.puercherjoachim.com/en/projects/join): Kanban-style task management app (HTML, CSS, JavaScript, Firebase)
+- [Pulsify](https://www.puercherjoachim.com/en/projects/pulsify): planning app for events and places in Austria with AI, web app, iOS/Android app and business dashboard; startup monorepo he works on (TypeScript, React Native, Next.js, Hono, Supabase, Railway, Vercel)
+- [Join](https://www.puercherjoachim.com/en/projects/join): Kanban-style task management web app (HTML, CSS, JavaScript, Firebase)
 - [El Pollo Loco](https://www.puercherjoachim.com/en/projects/el-pollo-loco): object-oriented browser jump-and-run game (HTML, CSS, JavaScript)
-- [Videoflix](https://www.puercherjoachim.com/en/projects/videoflix): video streaming backend with JWT auth and HLS transcoding, REST API built by me (Python, Django, Django REST Framework, PostgreSQL, Redis, Docker)
-- [Coderr](https://www.puercherjoachim.com/en/projects/coderr): full stack service platform, REST API built by me (Python, Django, Django REST Framework, Docker, Linux)
+- [Videoflix](https://www.puercherjoachim.com/en/projects/videoflix): video streaming backend with JWT auth and HLS transcoding, REST API (Python, Django, Django REST Framework, PostgreSQL, Redis, Docker)
+- [Coderr](https://www.puercherjoachim.com/en/projects/coderr): full stack service platform with REST API (Python, Django, Django REST Framework, Docker, Linux)
 
-## Contact and profiles
+## Location and contact
 
+- Joachim Pürcher, Schöneringer Straße 12e, 4073 Wilhering (near Linz), Upper Austria, Austria
+- Phone: +43 676 770 41 99
 - E-mail: contact@puercherjoachim.com
+- [Contact form](https://www.puercherjoachim.com/de/#contact-me-section)
 - [LinkedIn](https://www.linkedin.com/in/joachim-pürcher-92b249345/)
 - [GitHub](https://github.com/JoachimPuercher)
 
 ## Legal
 
-- [Legal notice](https://www.puercherjoachim.com/de/imprint)
-- [Privacy policy](https://www.puercherjoachim.com/de/data-save)
+- [Legal notice](https://www.puercherjoachim.com/de/imprint/)
+- [Privacy policy](https://www.puercherjoachim.com/de/data-save/)

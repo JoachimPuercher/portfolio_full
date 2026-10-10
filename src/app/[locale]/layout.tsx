@@ -8,7 +8,7 @@ import AosProvider from "@/components/providers/AosProvider";
 import CursorTrail from "@/components/providers/CursorTrail";
 import MaskOverlay from "@/components/shared/mask-overlay/MaskOverlay";
 import JsonLd from "@/components/shared/seo/JsonLd";
-import { ogImageUrl, personJsonLd, SITE_NAME, SITE_URL, websiteJsonLd } from "@/helpers/seo";
+import { ogImageUrl, personJsonLd, professionalServiceJsonLd, SITE_NAME, SITE_URL, websiteJsonLd } from "@/helpers/seo";
 import "aos/dist/aos.css";
 import "@/styles/globals.css";
 
@@ -35,8 +35,15 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
     formatDetection: { telephone: false },
     openGraph: { siteName: SITE_NAME, images: [image] },
     twitter: { card: "summary_large_image", images: [image.url] },
-    // Kept from the Angular index.html
-    other: { google: "notranslate" },
+    // Large image previews and full snippets in Google results and AI overviews (GEO).
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+    other: {
+      // Kept from the Angular index.html
+      google: "notranslate",
+      // Legacy geo tags: still read by some directories and local crawlers.
+      "geo.region": "AT-4",
+      "geo.placename": "Wilhering, Linz",
+    },
   };
 }
 
@@ -62,7 +69,18 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <AosProvider />
           <CursorTrail />
         </NextIntlClientProvider>
-        <JsonLd data={[personJsonLd(locale, t("jobTitle"), t("description")), websiteJsonLd(locale, t("description"))]} />
+        <JsonLd
+          data={[
+            personJsonLd(locale, t("jobTitle"), t("description")),
+            professionalServiceJsonLd(
+              locale,
+              t("serviceName"),
+              t("serviceDescription"),
+              Object.values(t.raw("services") as Record<string, string>),
+            ),
+            websiteJsonLd(locale, t("description")),
+          ]}
+        />
       </body>
     </html>
   );
