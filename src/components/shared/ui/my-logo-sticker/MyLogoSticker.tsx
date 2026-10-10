@@ -9,7 +9,7 @@ interface MyLogoStickerProps {
 
 /**
  * Angular: shared/components/ui/my-logo-sticker.
- * Round sticker with the logo and circular text ("Joachim - Frontend Developer").
+ * Round sticker with the logo and circular text ("Joachim - Fullstack Developer").
  */
 export default function MyLogoSticker({ stickerImgPath, logoImgPath, textPathId = "textCircle" }: MyLogoStickerProps) {
   return (
@@ -34,7 +34,7 @@ export default function MyLogoSticker({ stickerImgPath, logoImgPath, textPathId 
         </defs>
         <text fontSize="14" fill="black" fontWeight="600" style={{ fontFamily: "var(--font-bricolage)" }}>
           <textPath href={`#${textPathId}`} startOffset="50%" textAnchor="middle">
-            Joachim - Frontend Developer - Joachim - Frontend Developer -
+            Joachim - Fullstack Developer - Joachim - Fullstack Developer -
           </textPath>
         </text>
       </svg>
