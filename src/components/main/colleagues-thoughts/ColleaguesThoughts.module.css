@@ -74,7 +74,9 @@
   filter: brightness(1.05);
 }
 
-@media (pointer: coarse), (max-width: 520px) {
+/* Below 1024px (and on any touch device) the fan becomes a stack: three overlapping
+   rotated cards are unreadable once the viewport is narrower than the cards. */
+@media (pointer: coarse), (max-width: 1024px) {
   .stickerContainer {
     display: flex;
     justify-content: center;
@@ -82,9 +84,11 @@
     flex-direction: column;
   }
 }
-@media ((pointer: coarse) or (max-width: 520px)) and (max-width: 1200px) {
+@media ((pointer: coarse) or (max-width: 1024px)) and (max-width: 1200px) {
+  /* Stacked instead of fanned out: the rotated cards need real space between them,
+     otherwise the tilted corners reach into the neighbour's text. */
   .stickerContainer {
-    gap: 0px;
+    gap: 32px;
   }
   .stickerContainer > div {
     position: static !important;
