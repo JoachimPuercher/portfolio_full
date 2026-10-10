@@ -4,7 +4,8 @@
  *
  * Static export cannot serve Next's dynamic opengraph-image route with a proper
  * content type on Apache, so the same layout is rendered here with next/og at
- * development time. Re-run after changing meta.jobTitle in messages/*.json.
+ * development time. Re-run after changing meta.jobTitle, meta.ogTagline or
+ * meta.ogLocation in messages/*.json.
  */
 // `next/og` is not resolvable from plain Node ESM; use the compiled Node build it wraps.
 import { ImageResponse } from "next/dist/compiled/@vercel/og/index.node.js";
@@ -21,7 +22,7 @@ const [regular, bold, kalam, portrait] = await Promise.all([
   readFile(join(FONTS, "BricolageGrotesque-Regular.ttf")),
   readFile(join(FONTS, "BricolageGrotesque-Bold.ttf")),
   readFile(join(FONTS, "Kalam-Bold.ttf")),
-  readFile(join(ROOT, "public", "images", "hero-section", "pic-hero.png")),
+  readFile(join(ROOT, "public", "images", "hero-section", "pic-hero_2.png")),
 ]);
 const portraitSrc = `data:image/png;base64,${portrait.toString("base64")}`;
 
@@ -29,7 +30,7 @@ await mkdir(OUT_DIR, { recursive: true });
 
 for (const locale of ["de", "en"]) {
   const messages = JSON.parse(await readFile(join(ROOT, "messages", `${locale}.json`), "utf8"));
-  const jobTitle = messages.meta.jobTitle;
+  const { jobTitle, ogTagline, ogLocation } = messages.meta;
 
   const element = h(
     "div",
@@ -52,8 +53,8 @@ for (const locale of ["de", "en"]) {
       h("div", { style: { fontSize: 34, color: "#f87a55" } }, GREETING[locale]),
       h("div", { style: { fontSize: 88, fontWeight: 700, lineHeight: 1.05, marginTop: 10 } }, "Joachim Pürcher"),
       h("div", { style: { fontSize: 58, fontWeight: 700, color: "#f7c518", marginTop: 14 } }, jobTitle),
-      h("div", { style: { fontSize: 28, marginTop: 36, opacity: 0.9 } }, "React · Next.js · TypeScript · Angular"),
-      h("div", { style: { fontSize: 26, marginTop: 10, opacity: 0.75 } }, "Wilhering / Linz, Austria · puercherjoachim.com"),
+      h("div", { style: { fontSize: 28, marginTop: 36, opacity: 0.9 } }, ogTagline),
+      h("div", { style: { fontSize: 26, marginTop: 10, opacity: 0.75 } }, ogLocation),
     ),
     h(
       "div",
