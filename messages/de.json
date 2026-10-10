@@ -63,9 +63,9 @@
       "pulsify": {
         "header": "Pulsify",
         "descHeader": "Beschreibung",
-        "descText": "Planungs-App fürs Ausgehen: Events und Orte in den Städten Österreichs. Ein Satz genügt, Pulsify AI macht daraus einen Plan mit eigenem Chat und bleibt dran. Web-App, iOS- und Android-App und ein Business-Dashboard für Lokale und Veranstalter. Startup-Projekt, ich arbeite am gesamten Monorepo mit und unterstütze das Team, wo ich kann. Full Stack, live zum Testen.",
+        "descText": "Planungs-App fürs Ausgehen: Events und Orte in Österreichs Städten. Ein Satz genügt, Pulsify AI macht daraus einen Plan mit eigenem Chat. Web-App, iOS- und Android-App plus Business-Dashboard für Lokale und Veranstalter. Startup-Projekt, ich arbeite am gesamten Monorepo mit.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Ein Monorepo, ein API-Vertrag. Das Hono-Backend definiert jede Route mit Zod-Schemas, Expo-App und Vite-Dashboard rufen sie über einen typisierten RPC-Client auf: Ändert sich ein Endpunkt, bricht der Consumer beim Kompilieren, nicht in Produktion. DTOs, Enums und Validierung liegen in einem gemeinsamen Package, das alle Apps importieren. Supabase liefert Auth, Postgres, Storage und Realtime; nur das Backend spricht mit der Datenbank (Drizzle) und hält die Geschäftslogik, die Clients fragen sie nie direkt ab. Die öffentliche Next.js-Seite ist SEO-first und übergibt soziale Funktionen per Deep Link an die native App. Jede App deployt für sich: Backend auf Railway, Web und Dashboard auf Vercel, die App über EAS.",
+        "implementText": "Ein Monorepo, ein API-Vertrag: Das Hono-Backend definiert jede Route mit Zod-Schemas, Expo-App und Vite-Dashboard rufen sie über einen typisierten RPC-Client auf. Ändert sich ein Endpunkt, bricht der Consumer beim Kompilieren statt in Produktion. Supabase liefert Auth, Postgres und Storage; nur das Backend spricht mit der Datenbank und hält die Geschäftslogik. Jede App deployt für sich: Railway, Vercel und EAS.",
         "durHeader": "Dauer",
         "durTime": "Seit Mai 2026, laufend"
       },
@@ -90,9 +90,9 @@
       "videoflix": {
         "header": "Videoflix",
         "descHeader": "Beschreibung",
-        "descText": "Backend für eine kleine Video-Streaming-Plattform. Nutzer registrieren sich mit E-Mail und Passwort, aktivieren ihr Konto per Mail, loggen sich mit JWT-Cookies ein und streamen hochgeladene Videos als HLS in 480p, 720p und 1080p. Nur Backend, noch kein öffentliches Deployment, siehe Repository.",
+        "descText": "Backend für eine kleine Video-Streaming-Plattform. Nutzer registrieren sich per E-Mail, aktivieren ihr Konto per Mail, loggen sich mit JWT-Cookies ein und streamen Videos als HLS in 480p, 720p und 1080p. Nur Backend, siehe Repository.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Django REST Framework mit Simple JWT in HttpOnly-Cookies, Kontoaktivierung und Passwort-Reset per Mail. PostgreSQL als Datenbank, Redis mit django-rq für Hintergrundjobs: jeder Upload stößt ffmpeg-Jobs an, die das Video in HLS-Playlists pro Auflösung umwandeln, ein weiterer Job holt das Vorschaubild. Hochgeladene Thumbnails werden mit Pillow geprüft und neu kodiert. Auch Mails gehen über die Queue, Requests warten nie auf SMTP. Alles läuft in Docker Compose (db, redis, web) mit einem Entrypoint, der migriert, statische Dateien sammelt und rq-Worker sowie gunicorn startet. Tests für Auth- und Content-Endpunkte.",
+        "implementText": "Django REST Framework mit Simple JWT in HttpOnly-Cookies, Kontoaktivierung und Passwort-Reset per Mail. PostgreSQL als Datenbank, Redis mit django-rq für Hintergrundjobs: Jeder Upload stößt ffmpeg-Jobs an, die das Video in HLS-Playlists pro Auflösung umwandeln. Auch Mails laufen über die Queue. Alles in Docker Compose mit Entrypoint für Migrationen, Worker und gunicorn. Tests für Auth- und Content-Endpunkte.",
         "durHeader": "Dauer",
         "durTime": "Zwei Wochen"
       },
@@ -101,7 +101,7 @@
         "descHeader": "Beschreibung",
         "descText": "Full-Stack-Plattform für IT-Dienstleistungen. Business-Nutzer veröffentlichen Angebote mit drei Paketen, Kunden bestellen sie und bewerten anschließend den Anbieter. Full-Stack-Projekt, live zum Testen. Gehostet auf meinem eigenen netcup Server.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Django REST Framework API nach einer vorgegebenen Spezifikation. Token-Authentifizierung mit Registrierung und Login. Zwei Rollen (Business und Kunde) mit Objektberechtigungen für Besitzer, Anbieter und Staff. Verschachtelte Serializer für Angebote und ihre Pakete, Bestellungen, die die Angebotskonditionen kopieren, Bewertungen einmal pro Anbieter. Filtern, Suchen, Sortieren und Pagination. Rate Limiting pro Endpunkt. Integrationstests für den Happy Path und die Fälle 400, 401, 403 und 404. Deployment als Docker-Container mit gunicorn hinter nginx auf einem selbst eingerichteten Linux vServer.",
+        "implementText": "Django REST Framework API nach vorgegebener Spezifikation. Token-Auth mit Registrierung und Login, zwei Rollen mit Objektberechtigungen. Verschachtelte Serializer für Angebote und Pakete, Bestellungen kopieren die Konditionen, Bewertungen einmal pro Anbieter. Filtern, Suchen, Sortieren, Pagination und Rate Limiting. Integrationstests für Happy Path und Fehlerfälle. Docker mit gunicorn hinter nginx auf einem eigenen Linux vServer.",
         "durHeader": "Dauer",
         "durTime": "Neun Wochen"
       }
