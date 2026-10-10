@@ -65,7 +65,7 @@
         "descHeader": "Beschreibung",
         "descText": "Planungs-App fürs Ausgehen: Events und Orte in den Städten Österreichs. Ein Satz genügt, Pulsify AI macht daraus einen Plan mit eigenem Chat und bleibt dran. Web-App, iOS- und Android-App und ein Business-Dashboard für Lokale und Veranstalter. Startup-Projekt, ich arbeite am gesamten Monorepo mit und unterstütze das Team, wo ich kann. Full Stack, live zum Testen.",
         "implementHeader": "Implementierungsdetails",
-        "implementText": "Turborepo-Monorepo mit pnpm. Expo-App mit expo-router, NativeWind und TanStack Query. Öffentliche Next.js-Website mit next-intl und MapLibre. Vite-Business-Dashboard mit TanStack Router, Radix und Tailwind 4. Bun- und Hono-Backend mit zod-openapi und Drizzle. Supabase für Auth, Postgres, Storage und Realtime. Gemeinsame DTOs, Enums und Validierung in einem Package, typisiertes Hono RPC vom Backend in beide Frontends, eine Vertragsänderung bricht den Consumer schon beim Kompilieren. Deployment auf Railway (Backend), Vercel (Web, Dashboard) und EAS (App). Biome, husky, knip und Conventional Commits in der CI.",
+        "implementText": "Ein Monorepo, ein API-Vertrag. Das Hono-Backend definiert jede Route mit Zod-Schemas, Expo-App und Vite-Dashboard rufen sie über einen typisierten RPC-Client auf: Ändert sich ein Endpunkt, bricht der Consumer beim Kompilieren, nicht in Produktion. DTOs, Enums und Validierung liegen in einem gemeinsamen Package, das alle Apps importieren. Supabase liefert Auth, Postgres, Storage und Realtime; nur das Backend spricht mit der Datenbank (Drizzle) und hält die Geschäftslogik, die Clients fragen sie nie direkt ab. Die öffentliche Next.js-Seite ist SEO-first und übergibt soziale Funktionen per Deep Link an die native App. Jede App deployt für sich: Backend auf Railway, Web und Dashboard auf Vercel, die App über EAS.",
         "durHeader": "Dauer",
         "durTime": "Seit Mai 2026, laufend"
       },
@@ -74,7 +74,7 @@
         "descHeader": "Beschreibung",
         "descText": "Eine professionelle Task-Management-App, inspiriert vom bekannten Kanban-Konzept. Zum Erstellen und Organisieren von Arbeitsabläufen, Zuteilen von Mitgliedern und Verwalten per drag and drop. Nur Frontend.",
         "implementHeader": "Implementierung",
-        "implementText": "Erstellen der einzelnen Kanban-Tasks für das Team. Zuweisung an die einzelnen Personen. Erstellung des Designs aller Sektionen per Designvorlage (Figma). Erstellung der Datenbankstruktur in Firebase. Implementierung der Datenaufbereitung von der API. Einbindung der Daten in die einzelnen Sektionen. Testing. Einheitliches, responsives Design laut Designvorlage (Figma).",
+        "implementText": "Kanban-Board als Single-Page-App in reinem JavaScript. Firebase ist das einzige Backend: Tasks, Kontakte und User liegen als JSON-Dokumente, der Client liest und schreibt sie über die REST-Schnittstelle und rendert die betroffene Spalte neu. Drag and Drop ändert nur das Statusfeld, alles andere bleibt unberührt. Design nach der Figma-Vorlage, responsive bis zum Smartphone.",
         "durHeader": "Dauer",
         "durTime": "6 Wochen"
       },
@@ -83,7 +83,7 @@
         "descHeader": "Beschreibung",
         "descText": "Ein objektorientiertes Browser Jump-and-Run Spiel. Hilf Pepe, Münzen und Tabasco-Flaschen zu sammeln, um am Ende das verrückte Oberhuhn zu bekämpfen. Zwei Schwierigkeitsgrade und ein endloser Hühnerrush Level erwarten dich. Inklusive einem Top 30 Highscore Board.",
         "implementHeader": "Implementierung",
-        "implementText": "Erstellung des Grundgerüsts. Schrittweise Implementierung der einzelnen Grafiken. Erstellen des Objekts oder eines vererbten Objekts (Grundgerüst) → Grafik einfügen → Animationen erstellen → Logik einbauen → Soundeffekte einfügen → Testen. Implementierung des Punkteboards (dynamisch), um jederzeit die Punktevergabe ändern zu können (REST-API). Implementierung eines Soundobjekts mit Lautstärkeregelung. Erstellung der beiden anderen Spielmodi.",
+        "implementText": "Ein Canvas-Spiel auf objektorientiertem Kern. Eine Basisklasse zeichnet, animiert und bewegt; Charaktere, Gegner und Items erben davon und ergänzen ihre eigene Logik. Eine zentrale Schleife prüft Kollisionen und treibt die Animationen, ein Sound-Objekt regelt die Lautstärke an einer Stelle. Das Highscore-Board ist die einzige externe Abhängigkeit: eine kleine REST-API, die das Spiel liest und schreibt.",
         "durHeader": "Dauer",
         "durTime": "6 Wochen"
       },

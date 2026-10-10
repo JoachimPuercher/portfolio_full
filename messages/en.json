@@ -64,7 +64,7 @@
         "descHeader": "Description",
         "descText": "Planning app for going out: events and places in Austria's cities. One sentence is enough, Pulsify AI turns it into a plan with its own chat and keeps everyone on track. Web app, iOS and Android app and a business dashboard for venues and organizers. Startup project, I work on the whole monorepo and support the team wherever I can. Full stack, live to test.",
         "implementHeader": "Implementation Details",
-        "implementText": "Turborepo monorepo with pnpm. Expo app with expo-router, NativeWind and TanStack Query. Public Next.js website with next-intl and MapLibre. Vite business dashboard with TanStack Router, Radix and Tailwind 4. Bun and Hono backend with zod-openapi and Drizzle. Supabase for auth, Postgres, storage and realtime. Shared DTOs, enums and validation in one package, typed Hono RPC from the backend into both frontends, so a contract change breaks the consumer at compile time. Deployment on Railway (backend), Vercel (web, dashboard) and EAS (app). Biome, husky, knip and Conventional Commits in CI.",
+        "implementText": "One monorepo, one API contract. The Hono backend defines every route with Zod schemas, and the Expo app and the Vite dashboard call it through a typed RPC client, so a changed endpoint breaks the consumers at compile time, not in production. DTOs, enums and validation live in a shared package all apps import. Supabase provides auth, Postgres, storage and realtime; only the backend talks to the database (Drizzle) and owns the business logic, the clients never query it directly. The public Next.js site is SEO-first and hands social features off to the native app via deep links. Each app deploys on its own: backend on Railway, web and dashboard on Vercel, the app through EAS.",
         "durHeader": "Duration",
         "durTime": "Since May 2026, ongoing"
       },
@@ -73,7 +73,7 @@
         "descHeader": "Description",
         "descText": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. Frontend only.",
         "implementHeader": "Implementation Details",
-        "implementText": "Creating the individual Kanban tasks for the team. Assigning them to the respective team members. Designing all sections based on the design template (Figma). Creating the database structure in Firebase. Implementing data processing from the API. Integrating the data into the individual sections. Testing. Consistent, responsive design according to the design template (Figma).",
+        "implementText": "Kanban board as a single-page app in plain JavaScript. Firebase is the only backend: tasks, contacts and users live as JSON documents, the client reads and writes them over the REST interface and re-renders the affected column. Drag and drop changes only the status field, everything else stays untouched. Design built from the Figma template, responsive down to the phone.",
         "durHeader": "Duration",
         "durTime": "Six Weeks"
       },
@@ -82,7 +82,7 @@
         "descHeader": "Description",
         "descText": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen. Two difficult levels, an endless Chicken Rush mode and a top 30 Highscore board.",
         "implementHeader": "Implementation Details",
-        "implementText": "Creation of the basic framework. Step-by-step implementation of the individual graphics. Creating the object or an inherited object (basic framework) → insert graphic → create animations → integrate logic → add sound effects → testing. Implementation of the dynamic scoreboard to be able to change the scoring at any time (REST-API). Implementation of a sound object with volume control. Creation of the two other game modes.",
+        "implementText": "A canvas game on an object-oriented core. One base class draws, animates and moves; characters, enemies and items inherit from it and add their own logic. A central loop checks collisions and drives the animations, a sound object controls all volume in one place. The high score board is the only external dependency: a small REST API that the game reads and writes.",
         "durHeader": "Duration",
         "durTime": "Five Weeks"
       },
